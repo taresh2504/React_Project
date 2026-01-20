@@ -13,10 +13,10 @@ const Navbar = () => {
         <header>
           <nav>
             <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-30px', color:'white', fontFamily:'serif',fontWeight:'bold'}}>
-              <li><Link to='/Home'>Home</Link></li>
-              <li><Link to='/Trains'>Trains</Link></li>
-              <li><Link to='/My_bookings'>My Bookings</Link></li>
-              <li><Link to='/Contact'>Contact</Link></li>
+              <li>Home</li>
+              <li>Trains</li>
+              <li>My Bookings</li>
+              <li>Contact</li>
             </ul>
           </nav>
         </header>

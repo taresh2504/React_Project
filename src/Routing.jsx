@@ -5,13 +5,14 @@ import Trains from './Pages/Trains'
 import My_bookings from './Pages/My_bookings'
 import Contact from './Pages/Contact'
 import Navbar from './Component/Navbar'
+import Slider from './Component/Slider'
 
 
 const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Navbar/>}>
+        <Route path='/' element={<Home/>}>
         <Route index element={<Home/>}/>
         <Route path='Home' element={<Home/>}/>
         <Route path='Trains' element={<Trains/>}/>
@@ -19,7 +20,8 @@ const Routing = () => {
         <Route path='Contact' element={<Contact/>}/>
         </Route>
       </Routes>
-      <Outlet/>
+      <Slider/>
+      {/* <Outlet/> */}
     </>
   )
 }
