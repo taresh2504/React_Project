@@ -5,14 +5,16 @@ import Slider from "./Component/Slider";
 import Home from "./Pages/Home";
 import Trainroute from "./Pages/Trainroute";
 import Specialtrain from "./Pages/Specialtrain";
+import Signup from "./Pages/Signup";
 
 const App = () => {
   return (
     <>
     {/* <Navbar/> */}
-    <Home/>
+    {/* <Home/> */}
     {/* <Specialtrain/> */}
     {/* <Trainroute/> */}
+    <Signup/>
     </>
   )
 }

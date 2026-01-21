@@ -1,3 +1,10 @@
-body{
+/* body{
     background-color: white;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;   /* Premium dark navy */
+  font-family: 'Poppins', sans-serif;
 }
