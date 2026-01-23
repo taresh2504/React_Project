@@ -6,6 +6,8 @@ import My_bookings from './Pages/My_bookings'
 import Contact from './Pages/Contact'
 import Navbar from './Component/Navbar'
 import Slider from './Component/Slider'
+import Signup from './Pages/Signup'
+import Login from './Pages/Login'
 
 
 const Routing = () => {
@@ -18,6 +20,8 @@ const Routing = () => {
         <Route path='Trains' element={<Trains/>}/>
         <Route path='My_bookings' element={<My_bookings/>}/>
         <Route path='Contact' element={<Contact/>}/>
+        <Route path='Signup' element={<Signup/>}/>
+        <Route path='Login' element={<Login/>}/>
         </Route>
       </Routes>
       <Slider/>

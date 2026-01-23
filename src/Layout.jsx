@@ -8,6 +8,9 @@ const Layout = () => {
       <li><Link to='/Trains'>Trains</Link></li>
       <li><Link to='/My_bookings'>My Bookings</Link></li>
       <li><Link to='/Contact'>Contact</Link></li>
+      <li><Link to='/Signup'>Sign-up</Link></li>
+      <li><Link to='/Login'>Log-in</Link></li>
+      <Outlet/>
     </>
   )
 }

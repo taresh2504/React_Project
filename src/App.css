@@ -183,3 +183,35 @@ body {
   opacity: 0.3;
   background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
 }
+
+/* Sign Up css */
+.name-head{
+  font-size: large;
+}
+
+.name-box{
+  height: 25px;
+  width: 325px;
+  border-radius: 7px;
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.signup-button{
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 30px;
+  width: 80px;
+  background-color: black;
+  margin-left: 150px;
+}
+
+.signup-login{
+  margin-left: 125px;
+  margin-top: 10px;
+}
+
+.login{
+  color: gold
+}

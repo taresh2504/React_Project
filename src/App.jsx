@@ -11,10 +11,8 @@ const App = () => {
   return (
     <>
     {/* <Navbar/> */}
-    {/* <Home/> */}
-    {/* <Specialtrain/> */}
-    {/* <Trainroute/> */}
-    <Signup/>
+    <Home/>
+    {/* <Signup/> */}
     </>
   )
 }
