@@ -13,10 +13,10 @@ const Navbar = () => {
         <header>
           <nav>
             <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-30px', color:'white', fontFamily:'serif',fontWeight:'bold'}}>
-              <li>Home</li>
-              <li>Trains</li>
-              <li>My Bookings</li>
-              <li>Contact</li>
+              <li><Link to='/home'>Home</Link></li>
+              <li><Link to='/trains'>Trains</Link></li>
+              <li><Link to='/my_bookings'>My Bookings</Link></li>
+              <li><Link to='/contact'>Contact</Link></li>
             </ul>
           </nav>
         </header>
@@ -25,8 +25,8 @@ const Navbar = () => {
           <header>
             <nav>
               <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-27px', marginLeft:'1000px', color:'white', fontFamily:'serif', fontWeight:'bold'}}>
-                <li>Sign-Up</li>
-                <li><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600'>Log-in</button></li>
+                <li><Link to='/signup'>Sign-Up</Link></li>
+                <li><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600'>Log-in</button></Link></li>
               </ul>
             </nav>
           </header>

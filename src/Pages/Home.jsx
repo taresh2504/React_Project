@@ -28,7 +28,6 @@ import jj from '../assets/Jaisalmer-to-Jodhpur.jpg'
 const Home = () => {
   return (
     <>
-    <Navbar/>
     <Slider/>
     
       <h1 className='text-center mt-4 text-4xl text-[#c9a227]'>Explore premium</h1>
