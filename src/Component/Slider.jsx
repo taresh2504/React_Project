@@ -3,9 +3,9 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import train1 from '../assets/train1.jpg'
 import train2 from '../assets/train2.jpg'
-import train3 from '../assets/train3.jpg'
-import train4 from '../assets/train4.jpg'
-import train5 from '../assets/train5.jpg'
+import train3 from '../assets/jalpaiguri_darjeling.jpg'
+import train4 from '../assets/munbai_goa.jpg'
+import train5 from '../assets/baramula-jammu.jpg'
 
 import { FcSearch } from "react-icons/fc";
 

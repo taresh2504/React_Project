@@ -221,6 +221,12 @@ body {
   text-decoration: underline;
 }
 
+.hide-eye{
+  margin-left: 300px;
+  margin-top: -20px;
+  color: black;
+}
+
 /* Lightrays css */
 
 .light-rays-container {
