@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Tailwind.css'
 import logo from '../assets/train-logo1.jpg'
 import { Link, Outlet } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+
+  let navigate = useNavigate('')
+
+  const isLoggedin = localStorage.getItem("isLoggedin") === "true"
+  const user = JSON.parse(localStorage.getItem("currentuser"))
+
+  const handleLogout = ()=>{
+    localStorage.removeItem("isLoggedin")
+    localStorage.removeItem("currentser")
+    navigate('/Signup')
+    
+  }
   return (
     <>
       <div className='border-2 border-s border-black h-20 bg-zinc-700'>
@@ -12,11 +25,11 @@ const Navbar = () => {
         <div>
         <header>
           <nav>
-            <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-30px', color:'white', fontFamily:'serif',fontWeight:'bold'}}>
-              <li><Link to='/home'>Home</Link></li>
-              <li><Link to='/trains'>Trains</Link></li>
-              <li><Link to='/my_bookings'>My Bookings</Link></li>
-              <li><Link to='/contact'>Contact</Link></li>
+            <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-30px', color:'white', fontFamily:'serif',fontWeight:'bold',}}>
+              <li><Link to='/home'  className="hover:text-red-700 transition duration-200">Home</Link></li>
+              <li><Link to='/trains'  className="hover:text-sky-300 transition duration-200">Trains</Link></li>
+              <li><Link to='/my_bookings'  className="hover:text-sky-300 transition duration-200">My Bookings</Link></li>
+              <li><Link to='/contact' className="hover:text-sky-300 transition duration-200">Contact</Link></li>
             </ul>
           </nav>
         </header>
@@ -25,8 +38,18 @@ const Navbar = () => {
           <header>
             <nav>
               <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-27px', marginLeft:'1000px', color:'white', fontFamily:'serif', fontWeight:'bold'}}>
-                <li><Link to='/signup'>Sign-Up</Link></li>
-                <li><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600'>Log-in</button></Link></li>
+                {!isLoggedin && (
+                  <div> 
+                    <button><Link to='/signup'  className='rounded-4xl border-2 caret-amber-50 pl-2 pr-2 pt-0.5 pb-0.5 bg-blue-600 mr-5'>Sign-Up</Link></button>
+                <button><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600'>Log-in</button></Link></button>
+                  </div>
+                )}
+                {isLoggedin && (
+                  <div>
+                   
+                <li><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600' onClick={handleLogout}>Log-out</button></Link></li>
+                  </div>
+                )}
               </ul>
             </nav>
           </header>
@@ -38,3 +61,7 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+{/* <li><Link to='/signup'  className="hover:text-amber-300 transition duration-200">Sign-Up</Link></li>
+                <li><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600'>Log-in</button></Link></li> */}
+

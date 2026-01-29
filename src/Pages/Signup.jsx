@@ -89,18 +89,20 @@ const Signup = () => {
 
     if (valid) {
       let users = JSON.parse(localStorage.getItem('users')) || []
-      let alreadyuser = users.find((e) => e.email == form.myemail)
+      let alreadyuser = users.find((e) => e.myemail === form.myemail)
 
       if (alreadyuser) {
         alert('Already a user')
         navigate('/Login')
         return
       }
-
-      users.push(form)
+      else{
+              users.push(form)
       localStorage.setItem('users', JSON.stringify(users))
       alert('signup success')
       navigate('/Login')
+      }
+
     }
   }
 
