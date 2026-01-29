@@ -7,6 +7,7 @@ import Trainroute from "./Pages/Trainroute";
 import Specialtrain from "./Pages/Specialtrain";
 import Signup from "./Pages/Signup";
 import Trains from "./Pages/Trains";
+import BookingTrains from "./Pages/BookingTrains";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
     {/* <Home/> */}
     {/* <Signup/> */}
     {/* <Routing/> */}
-    <Trains/>
+    {/* <Trains/> */}
+    <BookingTrains/>
     </>
   )
 }
