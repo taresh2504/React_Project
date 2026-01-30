@@ -3,12 +3,59 @@ import Navbar from '../Component/Navbar'
 import logo from '../assets/train-logo1.jpg'
 import { FaTrainSubway } from "react-icons/fa6";
 import '../App.css'
+import BookingTrains from './BookingTrains';
 
 const Trains = () => {
+  let trainroutes = [
+    {
+    "source": "Delhi",
+    "destination": "Mumbai",
+    "train_name": "Rajdhani Express",
+    "departure_time": "03:00 PM",
+    "date": "29 Jan 2026"
+  },
+  {
+    "source": "Mumbai",
+    "destination": "Pune",
+    "train_name": "Deccan Queen",
+    "departure_time": "07:00 AM",
+    "date": "01 Feb 2026"
+  },
+  {
+    "source": "Bangalore",
+    "destination": "Chennai",
+    "train_name": "Shatabdi Express",
+    "departure_time": "06:00 AM",
+    "date": "04 Feb 2026"
+  },
+  {
+    "source": "Bangalore",
+    "destination": "Hyderabad",
+    "train_name": "Vande Bharat Express",
+    "departure_time": "05:30 AM",
+    "date": "10 Feb 2026"
+  },
+  {
+    "source": "Delhi",
+    "destination": "Kolkata",
+    "train_name": "Poorva Express",
+    "departure_time": "05:45 PM",
+    "date": "15 Feb 2026"
+  },
+  {
+    "source": "Mumbai",
+    "destination": "Ahmedabad",
+    "train_name": "Shatabdi Express",
+    "departure_time": "12:00 PM",
+    "date": "20 Feb 2026"
+  }
+]
+
+  // h-screen
+  // bg-zinc-700
   return (
-    <div>
-      <Navbar/>
-      <div className='bg-zinc-700 h-screen'>
+    <>
+      <div className=' '>
         <div className='flex justify-center align-middle gap-3'>
           <FaTrainSubway className='h-20 w-7' /> <p className='font-bold text-4xl mt-5'>Search & Book Trains</p></div>
         <div className='train-searchbox'>
@@ -20,7 +67,17 @@ const Trains = () => {
         </div>  
         
       </div>
-    </div>
+     
+      {/* <BookingTrains name={''} /> */}
+      {trainroutes.map((e)=>{
+        return(
+          <div className='flex justify-center mt-5 -ml-9 '>
+           <BookingTrains name={e.train_name} source={e.source} destination={e.destination} departure_time={e.departure_time} date={e.date} />
+          </div> 
+        )
+      })}
+
+    </>
   )
 }
 

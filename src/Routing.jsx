@@ -22,6 +22,7 @@ const Routing = () => {
         <Route path='Trains' element={<Trains/>}/>
         <Route path='My_bookings' element={<My_bookings/>}/>
         <Route path='Contact' element={<Contact/>}/>
+        <Route path='Contact' element={<Contact/>}/>
         </Route>
 
         {/* Authorisation layout :- login,signup */}
