@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const BookingTrains = ({name,source,destination,departure_time,date}) => {
 
-  let Bf = navigate('/BookingForm')
+  // let Bf = navigate('/BookingForm')
   return (
     <>
       <div className='h-30 w-180 border-2 border-b-white rounded-2xl font-serif'>

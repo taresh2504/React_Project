@@ -323,3 +323,52 @@ body {
   font-family: 'Times New Roman', Times, serif;
   padding-left: 15px;
 }
+
+/* Booking form css begin */
+.formbox{
+  border: 2px solid red;
+  height: 30px;
+  width: 300px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.formbox2{
+  margin-left: 87px;
+  border: 2px solid red;
+  height: 30px;
+  width: 300px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.confirmbooking{
+  margin-top: 25px;
+  height: 40px;
+  width: 120px;
+  border: 2px solid red;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+
+/* .male{
+  margin-left: -60px;
+}
+
+.female{
+  padding-left: 40px;
+}
+
+.other{
+  padding-right: 150px;
+} */

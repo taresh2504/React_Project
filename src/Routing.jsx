@@ -10,6 +10,7 @@ import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Layout from './Layout'
 import Authlayout from './Authlayout'
+import BookingForm from './Pages/BookingForm'
 
 
 const Routing = () => {
@@ -22,7 +23,7 @@ const Routing = () => {
         <Route path='Trains' element={<Trains/>}/>
         <Route path='My_bookings' element={<My_bookings/>}/>
         <Route path='Contact' element={<Contact/>}/>
-        <Route path='Contact' element={<Contact/>}/>
+        <Route path='BookingForm' element={<BookingForm/>}/>
         </Route>
 
         {/* Authorisation layout :- login,signup */}
