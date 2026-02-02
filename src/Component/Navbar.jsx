@@ -26,7 +26,7 @@ const Navbar = () => {
         <header>
           <nav>
             <ul style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'50px', marginTop:'-30px', color:'white', fontFamily:'serif',fontWeight:'bold',}}>
-              <li><Link to='/home'  className="hover:text-red-700 transition duration-200">Home</Link></li>
+              <li><Link to='/home'  className="hover:text-sky-300 transition duration-200">Home</Link></li>
               <li><Link to='/trains'  className="hover:text-sky-300 transition duration-200">Trains</Link></li>
               <li><Link to='/my_bookings'  className="hover:text-sky-300 transition duration-200">My Bookings</Link></li>
               <li><Link to='/contact' className="hover:text-sky-300 transition duration-200">Contact</Link></li>
@@ -47,7 +47,7 @@ const Navbar = () => {
                 {isLoggedin && (
                   <div>
                    
-                <li><Link to='/login'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600' onClick={handleLogout}>Log-out</button></Link></li>
+                <li><Link to='/Home'><button className='rounded-4xl border-2 caret-amber-50 pl-3 pr-3 bg-blue-600' onClick={handleLogout}>Log-out</button></Link></li>
                   </div>
                 )}
               </ul>

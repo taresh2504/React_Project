@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 import { FaArrowRightLong } from "react-icons/fa6";
+import { RiArrowLeftRightFill } from "react-icons/ri";
+import axios from "axios"
 
 const Specialtrain = ({ image,name,source,destination,price }) => {
+
+  let [mydata, setMyData] = useState({
+    
+  })
+
+  let handleSubmit = () => {
+    axios.post("http://localhost:3000/special-train", mydata).then(()=>(
+      alert("Booking confirm")
+    ))
+  }
 
   // flex justify-items-center align-middle gap-4 ml-14 font-serif text-2xl 
   return (
@@ -23,7 +35,7 @@ const Specialtrain = ({ image,name,source,destination,price }) => {
         <div><img src={image} className='h-64 w-full object-cover' alt="" /></div>
         <div><hr className='text-black' /></div>
         <div className='p-4 bg-gradient-to-b from-[#0f172a]/90 to-[#020617]'><h1 className='p-4 bg-gradient-to-b from-[#0f172a]/90 to-[#020617] text-center text-2xl'>{name}</h1></div>
-        <div className='st'>{source} <FaArrowRightLong className='mt-1' /> {destination}</div>
+        <div className='st'>{source} <RiArrowLeftRightFill  className='mt-1'/> {destination}</div>
         <div><p className='text-center mt-3 font-serif text-2xl' >{price} </p></div>
         <div className='flex justify-center align-middle'><button className='bookbutton2'>Book Now</button></div>
         {/* <div><h2 className='text-gray-300 text-sm mt-2 text-center leading-relaxed'>{desc}</h2></div> */}

@@ -2,6 +2,7 @@ import React from 'react'
 import '../Tailwind.css'
 import '../App.css'
 import { FaArrowRightLong } from "react-icons/fa6";
+import { RiArrowLeftRightFill } from "react-icons/ri";
 
 const Trainroute = ({image, name,source,destination,price }) => {
   // let Train = {
@@ -16,7 +17,7 @@ const Trainroute = ({image, name,source,destination,price }) => {
         <div><img src={image} className='h-52 w-96 rounded-t-2xl' alt="" /></div>
         <div><hr className='text-black ' /></div>
         <div><h1 className='text-center text-[#c9a227] text-xl font-semibold mb-2'>{name}</h1></div>
-        <div><p className='trr'>{source} <FaArrowRightLong className='mt-1' /> {destination} </p></div>
+        <div><p className='trr'>{source} <RiArrowLeftRightFill  className='mt-1'/> {destination} </p></div>
         <div><p className='flex justify-items-center align-middle gap-4 ml-14 mt-3 font-serif text-2xl' >{price} </p></div>
         <div><button className='bookbutton'>Book Now</button></div>
         {/* <div><h2 className='text-center text-gray-300 text-sm'>{desc}</h2></div> */}

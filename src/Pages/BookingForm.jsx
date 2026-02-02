@@ -8,6 +8,7 @@ const BookingForm = () => {
   }
 
   let [form, setform] = useState({
+      trainname:'',
       passangername: '',
       numberofpassanger: '',
       fromstation: '',
@@ -86,9 +87,12 @@ const BookingForm = () => {
   return (
     <>
     <div className='ml-115 mt-5'>
-      <div className='text-center border-2 border-white w-100 h-120 rounded-2xl'>
+      <div className='text-center border-2 border-white w-100 h-130 rounded-2xl'>
       <form onSubmit={handlesubmit}>
         <h1 className='mt-4 font-serif text-2xl font-bold'>Booking Form</h1>
+        <div className='mt-3'>
+        <input type="text" className='formbox' placeholder='Enter Train name' name="trainname" onChange={handlechange} value={form.trainname} id="" /> <br />
+        </div>
         <div className='mt-3'>
         <input type="text" className='formbox' placeholder='Enter name' name="passangername" onChange={handlechange} value={form.passangername} id="" /> <br />
         </div>
@@ -109,6 +113,7 @@ const BookingForm = () => {
         </div>
         <div className='mt-3'>
         <select name="coaches" placeholder='Select Coach' className='formbox' onChange={handlechange} id="">
+          <option value="" disabled>Select Coach</option>
           <option value="Sleeper">Sleeper</option>
           <option value="General">General</option>
           <option value="ACteir1">ACtier1</option>

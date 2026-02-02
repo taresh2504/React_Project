@@ -20,6 +20,45 @@ import '../App.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
+
+  let [fromselected,setfromselected] = useState('')
+  let [toselected,settoselected] = useState('')
+
+  const fromStations = [
+  "Delhi",
+  "Kanpur",
+  "Mumbai",
+  "Kalka",
+  "Banihal",
+  "Nagpur",
+  "New Jalpaiguri",
+  "Jaisalmer",
+  "Bhopal",
+  "Kochi",
+  "Bangalore",
+  "Surat",
+  "Jaipur",
+  "Vadodara"
+];
+
+const toStations = [
+  "Lucknow",
+  "Agra",
+  "Nashik",
+  "Shimla",
+  "Baramulla",
+  "Madgaon",
+  "Darjeeling",
+  "Jodhpur",
+  "Raipur",
+  "Pune",
+  "Chennai",
+  "Hyderabad",
+  "Kolkata",
+  "Indore"
+];
+
+
   return (
     <>
     <div className='slider-container'>
@@ -32,27 +71,25 @@ export default function App() {
           </nav>
             <br />
             <div>
-                <input type="search" placeholder='From station' className='fs' name="" id="" />
-                {/* <select name="Delhi" id="">Delhi</select>
-                <select name="Mumbai" id="">Mumbai</select>
-                <select name="Kolkata" id="">kolkata</select>
-                <select name="Chennai" id="">Chennai</select>
-                <select name="Bhopal" id="">Bhopal</select>
-                <select name="Hyderabad" id="">Hyderabad</select>
-                <select name="Bengaluru" id="">Bengaluru</select>
-                <select name="Ahemdabad" id="">Ahemdabad</select> */}
+              <select name="" value={fromselected} onChange={(e)=>setfromselected(e.target.value)} id="">
+                <option value="" disabled>From Station</option>
+                {fromStations.map((item,index)=>{
+                  return(
+                    <option key={index} value={item}>{item}</option>
+                  )
+                })}
+              </select>
             </div>
             <br />
             <div>
-                <input type="search" placeholder='To station' className='ts' name="" id="" />
-                {/* <select name="Delhi" id="">Delhi</select>
-                <select name="Mumbai" id="">Mumbai</select>
-                <select name="Kolkata" id="">kolkata</select>
-                <select name="Chennai" id="">Chennai</select>
-                <select name="Bhopal" id="">Bhopal</select>
-                <select name="Hyderabad" id="">Hyderabad</select>
-                <select name="Bengaluru" id="">Bengaluru</select>
-                <select name="Ahemdabad" id="">Ahemdabad</select> */}
+              <select name="" value={toselected} onChange={(e)=>settoselected(e.target.value)} id="">
+                <option value="" disabled>To Station</option>
+                {fromStations.map((item,index)=>{
+                  return(
+                    <option key={index} value={item}>{item}</option>
+                  )
+                })}
+              </select>
             </div>
             <br />
             <input type="datetime-local" name="" placeholder='DD-MM-YYYY' className='time' id="" />

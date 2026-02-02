@@ -35,11 +35,11 @@ const Home = () => {
       <br />
 
       <div className='flex justify-center align-middle gap-2'>
-      <Trainroute image = {mhe} name = "Maharaja's Express" source='Delhi' destination='Delhi' price='₹6–7 lakh per person'/>
+      <Trainroute image = {mhe} name = "Maharaja's Express" source='Delhi' destination='Lucknow' price='₹600000 per person'/>
       
-      <Trainroute image={pow} name="Palace on Wheels" source='New Delhi' destination='Agra' price='₹2–3 lakh per person'/>
+      <Trainroute image={pow} name="Palace on Wheels" source='Kanpur' destination='Agra' price='₹200000 per person'/>
 
-      <Trainroute image={tdo} name="The Deccan Odyssey" source='Mumbai' destination='Mumbai' price='₹5–8 lakh per person'/>
+      <Trainroute image={tdo} name="The Deccan Odyssey" source='Mumbai' destination='Nashik' price='₹500000 per person'/>
       </div>
       <br />
 
@@ -56,17 +56,17 @@ const Home = () => {
       <br />
       <br />
       <div className='flex justify-center align-middle gap-10'>
-      <Specialtrain image={mg}  name="Mandovi Express" source='Mumbai CSMT' destination='Madgaon' price='₹1500 per person'/>
+      <Specialtrain image={mg}  name="Mandovi Express" source='Nagpur' destination='Madgaon' price='₹1500 per person'/>
 
       <Specialtrain image={jd} name="New Jalpaiguri to Darjeling Toy Train" source='New Jalpaiguri' destination='Darjeeling' price='₹1300 per person' />
       </div>
       <br />
       <br />
-      <div><h1 className='text-center mt-4 text-4xl text-black'>Desert Dreams</h1></div>
+      <div><h1 className='text-center mt-4 text-4xl text-amber-500'>Desert Dreams</h1></div>
       <br />
       <br />
       <div className='flex justify-center align-middle'>
-        <Specialtrain image={jj} name="Jaisalmer Jodhpur Express" source='Jaisalmer' destination='Jodhpur Junction' price='₹1200 per person'/>
+        <Specialtrain image={jj} name="Jaisalmer - Jodhpur Express" source='Jaisalmer' destination='Jodhpur Junction' price='₹1200 per person'/>
       </div>
     </>
   )

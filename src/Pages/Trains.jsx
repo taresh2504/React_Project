@@ -2,20 +2,21 @@ import React from 'react'
 import Navbar from '../Component/Navbar'
 import logo from '../assets/train-logo1.jpg'
 import { FaTrainSubway } from "react-icons/fa6";
+import { RiArrowLeftRightFill } from "react-icons/ri";
 import '../App.css'
 import BookingTrains from './BookingTrains';
 
 const Trains = () => {
   let trainroutes = [
     {
-    "source": "Delhi",
-    "destination": "Mumbai",
+    "source": "Bhopal",
+    "destination": "Raipur",
     "train_name": "Rajdhani Express",
     "departure_time": "03:00 PM",
     "date": "29 Jan 2026"
   },
   {
-    "source": "Mumbai",
+    "source": "Kochi",
     "destination": "Pune",
     "train_name": "Deccan Queen",
     "departure_time": "07:00 AM",
@@ -29,26 +30,83 @@ const Trains = () => {
     "date": "04 Feb 2026"
   },
   {
-    "source": "Bangalore",
+    "source": "Surat",
     "destination": "Hyderabad",
     "train_name": "Vande Bharat Express",
     "departure_time": "05:30 AM",
     "date": "10 Feb 2026"
   },
   {
-    "source": "Delhi",
+    "source": "Jaipur",
     "destination": "Kolkata",
     "train_name": "Poorva Express",
     "departure_time": "05:45 PM",
     "date": "15 Feb 2026"
   },
   {
-    "source": "Mumbai",
-    "destination": "Ahmedabad",
+    "source": "Vadodra",
+    "destination": "Indore",
     "train_name": "Shatabdi Express",
     "departure_time": "12:00 PM",
     "date": "20 Feb 2026"
+  },
+  {
+    "source": "Delhi",
+    "destination": "Lucknow",
+    "train_name": "Maharaja Express",
+    "departure_time": "09:00 PM",
+    "date": "25 Feb 2026"
+  },
+  {
+    "source": "Kanpur",
+    "destination": "Agra",
+    "train_name": "Palace on Wheels",
+    "departure_time": "10:00 PM",
+    "date": "22 Feb 2026"
+  },
+  {
+    "source": "Mumbai",
+    "destination": "Nashik",
+    "train_name": "Deccan Odyssey",
+    "departure_time": "12:00 PM",
+    "date": "20 Feb 2026"
+  },
+  {
+    "source": "Kalka",
+    "destination": "Shimla",
+    "train_name": "Kalka Shimla Toy Train",
+    "departure_time": "01:00 PM",
+    "date": "28 Feb 2026"
+  },
+  {
+    "source": "Banihal",
+    "destination": "Baramulla",
+    "train_name": "Banihal Baramulla Demu",
+    "departure_time": "04:00 PM",
+    "date": "15 Feb 2026"
+  },
+  {
+    "source": "nagpur",
+    "destination": "Madgaon",
+    "train_name": "Shatabdi Express",
+    "departure_time": "07:00 AM",
+    "date": "01 Apr 2026"
+  },
+  {
+    "source": "New Jalpaiguri",
+    "destination": "Darjelling",
+    "train_name": "New Jalpaiguri to Darjeling Toy Train",
+    "departure_time": "08:00 AM",
+    "date": "25 Apr 2026"
+  },
+  {
+    "source": "Jaisalmer",
+    "destination": "Jodhpur",
+    "train_name": "Jaisalmer Jodhpur Express",
+    "departure_time": "05:00 AM",
+    "date": "30 Apr 2026"
   }
+  
 ]
 
   // h-screen
