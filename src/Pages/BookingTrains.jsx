@@ -9,6 +9,19 @@ import { Link } from 'react-router-dom';
 
 const BookingTrains = ({name,source,destination,departure_time,date}) => {
 
+  let navigate = useNavigate('')
+  
+    let bf = ()=>{
+      navigate('/BookingForm', {
+      state: {
+        trainname: name,
+        fromstation: source,
+        tostation: destination,
+        // date: new Date().toISOString().slice(0,16) // optional
+      }
+    })
+    }
+
   // let Bf = navigate('/BookingForm')
   return (
     <>
@@ -16,7 +29,7 @@ const BookingTrains = ({name,source,destination,departure_time,date}) => {
         <p className='font-bold text-2xl ml-5 mt-4'>{name}</p>
         <div><p className='flex justify-items-center align-middle gap-4 ml-5' >{source} <RiArrowLeftRightFill className='mt-1' /> {destination} </p></div>
         <div><p className='flex justify-items-center align-middle gap-4 ml-5'><FcCalendar className='mt-1.5 text-2xl' /><div className='mt-1.5 -ml-3'>{date}</div> <div className='text-2xl -ml-3'>|</div> <FcAlarmClock className='mt-1.5 text-2xl -ml-3' /><div className='mt-1.5 -ml-3'>{departure_time}</div></p></div>
-        <div className='flex justify-center align-middle ml-130 -mt-15 '><button className='rounded-2xl pt-1 pl-1 pb-1 pr-1 bg-white text-black h-9 w-20 font-bold'><Link to={'/BookingForm'}>Book Now</Link></button></div>
+        <div className='flex justify-center align-middle ml-130 -mt-15 '><button className='rounded-2xl pt-1 pl-1 pb-1 pr-1 bg-white text-black h-9 w-20 font-bold' onClick={bf}>Book Now</button></div>
       </div>
     </>
   )

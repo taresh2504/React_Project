@@ -49,64 +49,7 @@ const Trains = () => {
     "train_name": "Shatabdi Express",
     "departure_time": "12:00 PM",
     "date": "20 Feb 2026"
-  },
-  {
-    "source": "Delhi",
-    "destination": "Lucknow",
-    "train_name": "Maharaja Express",
-    "departure_time": "09:00 PM",
-    "date": "25 Feb 2026"
-  },
-  {
-    "source": "Kanpur",
-    "destination": "Agra",
-    "train_name": "Palace on Wheels",
-    "departure_time": "10:00 PM",
-    "date": "22 Feb 2026"
-  },
-  {
-    "source": "Mumbai",
-    "destination": "Nashik",
-    "train_name": "Deccan Odyssey",
-    "departure_time": "12:00 PM",
-    "date": "20 Feb 2026"
-  },
-  {
-    "source": "Kalka",
-    "destination": "Shimla",
-    "train_name": "Kalka Shimla Toy Train",
-    "departure_time": "01:00 PM",
-    "date": "28 Feb 2026"
-  },
-  {
-    "source": "Banihal",
-    "destination": "Baramulla",
-    "train_name": "Banihal Baramulla Demu",
-    "departure_time": "04:00 PM",
-    "date": "15 Feb 2026"
-  },
-  {
-    "source": "nagpur",
-    "destination": "Madgaon",
-    "train_name": "Shatabdi Express",
-    "departure_time": "07:00 AM",
-    "date": "01 Apr 2026"
-  },
-  {
-    "source": "New Jalpaiguri",
-    "destination": "Darjelling",
-    "train_name": "New Jalpaiguri to Darjeling Toy Train",
-    "departure_time": "08:00 AM",
-    "date": "25 Apr 2026"
-  },
-  {
-    "source": "Jaisalmer",
-    "destination": "Jodhpur",
-    "train_name": "Jaisalmer Jodhpur Express",
-    "departure_time": "05:00 AM",
-    "date": "30 Apr 2026"
   }
-  
 ]
 
   // h-screen

@@ -1,21 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const BookingForm = () => {
+  const location = useLocation()
+  const trainData = location.state || {}
 
   let handlechange = (e) => {
     setform({ ...form, [e.target.name]: e.target.value })
   }
 
   let [form, setform] = useState({
-      trainname:'',
-      passangername: '',
-      numberofpassanger: '',
-      fromstation: '',
-      tostation: '',
-      age: '',
-      date: '',
-      gender:''
+    trainname: trainData.trainname || '',
+    passangername: '',
+    numberofpassanger: '',
+    fromstation: trainData.fromstation || '',
+    tostation: trainData.tostation || '',
+    age: '',
+    date: '',
+    gender:''
     })
 
     let handlesubmit=(e)=>{
@@ -91,7 +94,7 @@ const BookingForm = () => {
       <form onSubmit={handlesubmit}>
         <h1 className='mt-4 font-serif text-2xl font-bold'>Booking Form</h1>
         <div className='mt-3'>
-        <input type="text" className='formbox' placeholder='Enter Train name' name="trainname" onChange={handlechange} value={form.trainname} id="" /> <br />
+        <input type="text" className='formbox' placeholder='Enter Train name' name="trainname" onChange={handlechange} readOnly value={form.trainname} id="" /> <br />
         </div>
         <div className='mt-3'>
         <input type="text" className='formbox' placeholder='Enter name' name="passangername" onChange={handlechange} value={form.passangername} id="" /> <br />
@@ -100,10 +103,10 @@ const BookingForm = () => {
           <input type="text" className='formbox'  placeholder='Enter no. of passanger' name="numberofpassanger" onChange={handlechange} value={form.numberofpassanger} id="" /> <br />
         </div>
         <div className='mt-3'>
-          <input type="text" className='formbox' placeholder='From Station' name="fromstation" onChange={handlechange} value={form.fromstation} id="" /> <br />
+          <input type="text" className='formbox' placeholder='From Station' name="fromstation" onChange={handlechange} readOnly value={form.fromstation} id="" /> <br />
         </div>
         <div className='mt-3'>
-          <input type="text" className='formbox' placeholder='To Station' name="tostation" onChange={handlechange} value={form.tostation} id="" /> <br />
+          <input type="text" className='formbox' placeholder='To Station' name="tostation" onChange={handlechange} readOnly value={form.tostation} id="" /> <br />
         </div>
         <div className='mt-3'>
           <input type="text" className='formbox' placeholder='Enter age' name="age" onChange={handlechange} value={form.age} id="" /> <br />

@@ -25,14 +25,6 @@ export default function App() {
   let [toselected,settoselected] = useState('')
 
   const fromStations = [
-  "Delhi",
-  "Kanpur",
-  "Mumbai",
-  "Kalka",
-  "Banihal",
-  "Nagpur",
-  "New Jalpaiguri",
-  "Jaisalmer",
   "Bhopal",
   "Kochi",
   "Bangalore",
@@ -42,14 +34,6 @@ export default function App() {
 ];
 
 const toStations = [
-  "Lucknow",
-  "Agra",
-  "Nashik",
-  "Shimla",
-  "Baramulla",
-  "Madgaon",
-  "Darjeeling",
-  "Jodhpur",
   "Raipur",
   "Pune",
   "Chennai",
@@ -71,28 +55,28 @@ const toStations = [
           </nav>
             <br />
             <div>
-              <select name="" value={fromselected} onChange={(e)=>setfromselected(e.target.value)} id="">
+              <select className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' name="" value={fromselected} onChange={(e)=>setfromselected(e.target.value)} id="">
                 <option value="" disabled>From Station</option>
                 {fromStations.map((item,index)=>{
                   return(
-                    <option key={index} value={item}>{item}</option>
+                    <option className='bg-purple-500' key={index} value={item}>{item}</option>
                   )
                 })}
               </select>
             </div>
             <br />
             <div>
-              <select name="" value={toselected} onChange={(e)=>settoselected(e.target.value)} id="">
+              <select name="" className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' value={toselected} onChange={(e)=>settoselected(e.target.value)} id="">
                 <option value="" disabled>To Station</option>
-                {fromStations.map((item,index)=>{
+                {toStations.map((item,index)=>{
                   return(
-                    <option key={index} value={item}>{item}</option>
+                    <option className='bg-purple-500' key={index} value={item}>{item}</option>
                   )
                 })}
               </select>
             </div>
             <br />
-            <input type="datetime-local" name="" placeholder='DD-MM-YYYY' className='time' id="" />
+            <input type="datetime-local" name="" placeholder='DD-MM-YYYY' className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' id="" />
             <br />
             <br />
             <button type='submit' className='btn'>Search Trains</button>
