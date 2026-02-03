@@ -99,7 +99,7 @@ const Signup = () => {
       else{
               users.push(form)
       localStorage.setItem('users', JSON.stringify(users))
-      alert('signup success')
+      alert('signup success ✅')
       navigate('/Login')
       }
 

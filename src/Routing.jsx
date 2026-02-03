@@ -11,6 +11,7 @@ import Login from './Pages/Login'
 import Layout from './Layout'
 import Authlayout from './Authlayout'
 import BookingForm from './Pages/BookingForm'
+import About from './Pages/About'
 
 
 const Routing = () => {
@@ -22,6 +23,7 @@ const Routing = () => {
         <Route path='Home' element={<Home/>}/>
         <Route path='Trains' element={<Trains/>}/>
         <Route path='My_bookings' element={<My_bookings/>}/>
+        <Route path='About' element={<About/>}/>
         <Route path='Contact' element={<Contact/>}/>
         <Route path='BookingForm' element={<BookingForm/>}/>
         </Route>

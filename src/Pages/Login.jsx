@@ -110,7 +110,7 @@ const Login = () => {
       if (authuser) {
         localStorage.setItem("isLoggedin","true");
         localStorage.setItem("currentUser",JSON.stringify(authuser));
-        alert('login succes')
+        alert('login succes ✅')
         navigate('/home')
         return
       }

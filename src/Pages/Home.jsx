@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+
 import Navbar from '../Component/Navbar'
 import Slider from '../Component/Slider'
 import '../Tailwind.css'
@@ -12,6 +13,7 @@ import bj from '../assets/baramula-jammu.jpg'
 import mg from '../assets/munbai_goa.jpg'
 import jd from '../assets/jalpaiguri_darjeling.jpg'
 import jj from '../assets/Jaisalmer-to-Jodhpur.jpg'
+import axios from 'axios'
 
 
 // Kalka to shimla - toy train through hills 
@@ -25,7 +27,12 @@ import jj from '../assets/Jaisalmer-to-Jodhpur.jpg'
 // 2. palace on wheels
 // 1. Maharaja express
 
+
+
+
+
 const Home = () => {
+
   return (
     <>
     <Slider/>
@@ -45,12 +52,12 @@ const Home = () => {
 
       <h1 className='text-center mt-4 text-4xl text-[#e5e7eb]'>Winter Special</h1>
       <br />
-      <div className='flex justify-center align-middle gap-10'>
+      {/* <div className='flex justify-center align-middle gap-10'>
       <Specialtrain image={kts}  name="Kalka Shimla Toy Train" source='Kalka (KLK)' destination='Shimla (SML)' price='₹1000 per person'/>
 
       <Specialtrain image={bj} name="Banihal - Baramula DEMU" source='Banihal (BAHL)' destination='Baramulla (BRML)' price='₹500 per person'/>
-      </div>
-      <br />
+      </div> */}
+      {/* <br />
       <br />
       <div><h1 className='text-center mt-4 text-4xl text-sky-300'>Monsoon Magic</h1></div>
       <br />
@@ -64,9 +71,9 @@ const Home = () => {
       <br />
       <div><h1 className='text-center mt-4 text-4xl text-amber-500'>Desert Dreams</h1></div>
       <br />
-      <br />
-      <div className='flex justify-center align-middle'>
-        <Specialtrain image={jj} name="Jaisalmer - Jodhpur Express" source='Jaisalmer' destination='Jodhpur Junction' price='₹1200 per person'/>
+      <br /> */}
+      <div className='flex justify-center items-center'>
+ <Specialtrain/>
       </div>
     </>
   )

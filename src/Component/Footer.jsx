@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <>
       <div className='h-78 w-full border-2 border-black mt-3'>
-        <div className='font-serif font-semibold mt-10'>
-          <p>© 2026 Bharat Railways</p>
+        <div className='font-serif font-semibold mt-10 ml-4'>
+          <p>© 2026 FastTrack Railways</p>
           <br />
           <p>Govt. of India Undertaking</p>
         </div>
         <div className='flex flex-col justify-center align-middle font-serif font-semibold ml-100 -mt-16'>
-          <p>Customer Care: 139</p>
+          <p>Customer Care: 007</p>
           <br />
           <p>Email:taresh25202@gmail.com</p>
           <br />

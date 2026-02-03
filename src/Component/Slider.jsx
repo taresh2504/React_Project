@@ -6,7 +6,7 @@ import train2 from '../assets/train2.jpg'
 import train3 from '../assets/jalpaiguri_darjeling.jpg'
 import train4 from '../assets/munbai_goa.jpg'
 import train5 from '../assets/baramula-jammu.jpg'
-
+import axios from 'axios';
 import { FcSearch } from "react-icons/fc";
 
 // Import Swiper styles
@@ -20,66 +20,89 @@ import '../App.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
+const [fromselected, setfromselected] = useState('');
+  const [toselected, settoselected] = useState('');
+  const [date, setDate] = useState(''); // New state for date
 
-  let [fromselected,setfromselected] = useState('')
-  let [toselected,settoselected] = useState('')
+  const fromStations = ["Bhopal", "Kochi", "Bangalore", "Surat", "Jaipur", "Vadodara"];
+  const toStations = ["Raipur", "Pune", "Chennai", "Hyderabad", "Kolkata", "Indore"];
 
-  const fromStations = [
-  "Bhopal",
-  "Kochi",
-  "Bangalore",
-  "Surat",
-  "Jaipur",
-  "Vadodara"
-];
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-const toStations = [
-  "Raipur",
-  "Pune",
-  "Chennai",
-  "Hyderabad",
-  "Kolkata",
-  "Indore"
-];
+    // Basic Validation
+    if (!fromselected || !toselected || !date) {
+      alert("Please fill all fields");
+      return;
+    }
 
+    const bookingData = {
+      from: fromselected,
+      to: toselected,
+      travelDate: date,
+      bookingTime: new Date().toLocaleString()
+    };
+
+    try {
+      // Replace with your actual json-server URL
+      const response = await axios.post('http://localhost:3000/booking-data', bookingData);
+      
+      if (response.status === 201) {
+        alert('Booking Saved Successfully!');
+        // Reset form
+        setfromselected('');
+        settoselected('');
+        setDate('');
+      }
+    } catch (error) {
+      console.error("Error saving booking:", error);
+      alert("Failed to save booking. Make sure json-server is running.");
+    }
+  };
 
   return (
     <>
-    <div className='slider-container'>
+      <div className='slider-container'>
         <div className='searchbox'>
-          <nav>
-            <ul style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'8px'}}>
-              <li><FcSearch className='searchglass' /></li>
-              <li><h2 className='srchheading'>Book Ticket</h2></li>
-            </ul>
-          </nav>
-            <br />
+          {/* ... nav section ... */}
+          
+          {/* Wrap inputs in a form to handle submission */}
+          <form onSubmit={handleSubmit}>
             <div>
-              <select className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' name="" value={fromselected} onChange={(e)=>setfromselected(e.target.value)} id="">
+              <select 
+                className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
+                value={fromselected} 
+                onChange={(e) => setfromselected(e.target.value)}
+              >
                 <option value="" disabled>From Station</option>
-                {fromStations.map((item,index)=>{
-                  return(
-                    <option className='bg-purple-500' key={index} value={item}>{item}</option>
-                  )
-                })}
+                {fromStations.map((item, index) => (
+                  <option key={index} className='bg-purple-400' value={item}>{item}</option>
+                ))}
               </select>
             </div>
             <br />
             <div>
-              <select name="" className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' value={toselected} onChange={(e)=>settoselected(e.target.value)} id="">
-                <option value="" disabled>To Station</option>
-                {toStations.map((item,index)=>{
-                  return(
-                    <option className='bg-purple-500' key={index} value={item}>{item}</option>
-                  )
-                })}
+              <select 
+                className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
+                value={toselected} 
+                onChange={(e) => settoselected(e.target.value)}
+              >
+                <option value=""  disabled>To Station</option>
+                {toStations.map((item, index) => (
+                  <option key={index} className='bg-purple-400' value={item}>{item}</option>
+                ))}
               </select>
             </div>
             <br />
-            <input type="datetime-local" name="" placeholder='DD-MM-YYYY' className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' id="" />
-            <br />
-            <br />
-            <button type='submit' className='btn'>Search Trains</button>
+            <input 
+              type="datetime-local" 
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
+            />
+            <br /><br />
+            <button type='submit' className='btn'>Search & Book</button>
+          </form>
         </div>
       </div>
       <Swiper

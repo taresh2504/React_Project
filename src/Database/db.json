@@ -1,3 +1,88 @@
 {
-    "special-train": []
+  "special-trains": [
+    {
+      "image": "Kalka-Shimla.jpg",
+      "name": "Kalka Shimla Train",
+      "source": "Kalka (KLK)",
+      "destination": "Shimla (SML)",
+      "date": "05 Dec 2026",
+      "price": 550,
+      "id": "1be3"
+    },
+    {
+      "image": "baramula-jammu.jpg",
+      "name": "Banihal - Baramula",
+      "source": "Banihal",
+      "destination": "Baramulla",
+      "date": "12 Jan 2026",
+      "price": 220,
+      "id": "b722"
+    },
+    {
+      "image": "munbai_goa.jpg",
+      "name": "Mandovi Express",
+      "source": "Nagpur",
+      "destination": "Madgaon",
+      "date": "20 Jul 2026",
+      "price": 1450,
+      "id": "74c6"
+    },
+    {
+      "image": "jalpaiguri_darjeling.jpg",
+      "name": "Darjeeling Train",
+      "source": "New Jalpaiguri",
+      "destination": "Darjeeling",
+      "date": "28 Jul 2026",
+      "price": 400,
+      "id": "f0e3"
+    },
+    {
+      "image": "Jaisalmer-to-Jodhpur.jpg",
+      "name": "Jodhpur Express",
+      "source": "Jaisalmer",
+      "destination": "Jodhpur Junction",
+      "date": "15 Feb 2026",
+      "price": 650,
+      "id": "3b74"
+    }
+  ],
+  "train-route": [
+    {
+      "name": "Maharaja's Express",
+      "source": "Delhi",
+      "destination": "Lucknow",
+      "date": "25 Apr 2026",
+      "id": "0bed"
+    },
+    {
+      "name": "Palace on Wheels",
+      "source": "Kanpur",
+      "destination": "Agra",
+      "date": "10 May 2026",
+      "id": "9c88"
+    },
+    {
+      "name": "The Deccan Odyssey",
+      "source": "Mumbai",
+      "destination": "Nashik",
+      "date": "18 Jun 2026",
+      "id": "23f3"
+    }
+  ],
+  "booking-data": [
+    {
+      "id": "a702",
+      "from": "Bhopal",
+      "to": "Chennai",
+      "travelDate": "2026-02-05T18:16",
+      "bookingTime": "2/3/2026, 3:14:50 PM"
+    },
+    {
+      "id": "0e6e",
+      "from": "Bhopal",
+      "to": "Raipur",
+      "travelDate": "2026-02-03T19:52",
+      "bookingTime": "2/3/2026, 7:52:31 PM"
+    }
+  ]
 }

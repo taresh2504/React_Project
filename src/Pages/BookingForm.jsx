@@ -17,7 +17,7 @@ const BookingForm = () => {
     fromstation: trainData.fromstation || '',
     tostation: trainData.tostation || '',
     age: '',
-    date: '',
+    date: trainData.date || '',
     gender:''
     })
 
