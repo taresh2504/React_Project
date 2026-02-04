@@ -8,49 +8,44 @@ import BookingTrains from './BookingTrains';
 
 const Trains = () => {
   let trainroutes = [
-    {
-    "source": "Bhopal",
-    "destination": "Raipur",
-    "train_name": "Rajdhani Express",
-    "departure_time": "03:00 PM",
-    "date": "29 Jan 2026"
+  {
+    source: "Bhopal",
+    destination: "Raipur",
+    train_name: "Rajdhani Express",
+    price: 2200
   },
   {
-    "source": "Kochi",
-    "destination": "Pune",
-    "train_name": "Deccan Queen",
-    "departure_time": "07:00 AM",
-    "date": "01 Feb 2026"
+    source: "Kochi",
+    destination: "Pune",
+    train_name: "Deccan Queen",
+    price: 1800
   },
   {
-    "source": "Bangalore",
-    "destination": "Chennai",
-    "train_name": "Shatabdi Express",
-    "departure_time": "06:00 AM",
-    "date": "04 Feb 2026"
+    source: "Bangalore",
+    destination: "Chennai",
+    train_name: "Shatabdi Express",
+    price: 1500
   },
   {
-    "source": "Surat",
-    "destination": "Hyderabad",
-    "train_name": "Vande Bharat Express",
-    "departure_time": "05:30 AM",
-    "date": "10 Feb 2026"
+    source: "Surat",
+    destination: "Hyderabad",
+    train_name: "Vande Bharat Express",
+    price: 2500
   },
   {
-    "source": "Jaipur",
-    "destination": "Kolkata",
-    "train_name": "Poorva Express",
-    "departure_time": "05:45 PM",
-    "date": "15 Feb 2026"
+    source: "Jaipur",
+    destination: "Kolkata",
+    train_name: "Poorva Express",
+    price: 2000
   },
   {
-    "source": "Vadodra",
-    "destination": "Indore",
-    "train_name": "Shatabdi Express",
-    "departure_time": "12:00 PM",
-    "date": "20 Feb 2026"
+    source: "Vadodra",
+    destination: "Indore",
+    train_name: "Shatabdi Express",
+    price: 1600
   }
 ]
+
 
   // h-screen
   // bg-zinc-700
@@ -73,7 +68,7 @@ const Trains = () => {
       {trainroutes.map((e)=>{
         return(
           <div className='flex justify-center mt-5 -ml-9 '>
-           <BookingTrains name={e.train_name} source={e.source} destination={e.destination} departure_time={e.departure_time} date={e.date} />
+           <BookingTrains name={e.train_name} source={e.source} destination={e.destination} price={e.price} />
           </div> 
         )
       })}

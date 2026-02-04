@@ -110,6 +110,7 @@ const Login = () => {
       if (authuser) {
         localStorage.setItem("isLoggedin","true");
         localStorage.setItem("currentUser",JSON.stringify(authuser));
+        localStorage.setItem("useremail", authuser.myemail)
         alert('login succes ✅')
         navigate('/home')
         return

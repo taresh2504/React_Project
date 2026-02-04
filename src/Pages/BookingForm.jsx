@@ -1,8 +1,11 @@
+import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const BookingForm = () => {
+            let navigate = useNavigate()
+
   const location = useLocation()
   const trainData = location.state || {}
 
@@ -40,7 +43,12 @@ const BookingForm = () => {
         valid=false
       }
 
-      else if((form.numberofpassanger.length <= 0)){
+      else if(form.numberofpassanger.length <= 0){
+        alert('please enter valid number of passanger')
+        valid=false
+      }
+
+      else if(form.numberofpassanger <= 0){
         alert('please enter valid number of passanger')
         valid=false
       }
@@ -85,6 +93,15 @@ const BookingForm = () => {
         valid = false
       }
 
+      if(valid){
+        axios.post("http://localhost:3000/booking-data", form).then(()=>{
+          alert("Booking successful")
+          navigate("/my_bookings")
+        }).catch((err)=>{
+          alert("Error in booking")
+        })
+      }
+
     }
 
   return (
@@ -112,7 +129,7 @@ const BookingForm = () => {
           <input type="text" className='formbox' placeholder='Enter age' name="age" onChange={handlechange} value={form.age} id="" /> <br />
         </div>
         <div className='mt-3'>
-           <input type="datetime-local" className='formbox' name="date" onChange={handlechange} value={form.date} id="" /> <br />
+           <input type="date" className='formbox' name="date" onChange={handlechange} value={form.date} id="" /> <br />
         </div>
         <div className='mt-3'>
         <select name="coaches" placeholder='Select Coach' className='formbox' onChange={handlechange} id="">

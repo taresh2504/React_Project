@@ -5,7 +5,7 @@
       "name": "Kalka Shimla Train",
       "source": "Kalka (KLK)",
       "destination": "Shimla (SML)",
-      "date": "05 Dec 2026",
+      "date": "05-12-2026",
       "price": 550,
       "id": "1be3"
     },
@@ -52,6 +52,7 @@
       "source": "Delhi",
       "destination": "Lucknow",
       "date": "25 Apr 2026",
+      "price": 125000,
       "id": "0bed"
     },
     {
@@ -59,6 +60,7 @@
       "source": "Kanpur",
       "destination": "Agra",
       "date": "10 May 2026",
+      "price": 98000,
       "id": "9c88"
     },
     {
@@ -66,23 +68,91 @@
       "source": "Mumbai",
       "destination": "Nashik",
       "date": "18 Jun 2026",
+      "price": 145000,
       "id": "23f3"
     }
   ],
   "booking-data": [
     {
-      "id": "a702",
-      "from": "Bhopal",
-      "to": "Chennai",
-      "travelDate": "2026-02-05T18:16",
-      "bookingTime": "2/3/2026, 3:14:50 PM"
+      "id": "e51e",
+      "trainname": "Palace on Wheels",
+      "passangername": "Harish",
+      "numberofpassanger": "2",
+      "fromstation": "Kanpur",
+      "tostation": "Agra",
+      "age": "29",
+      "date": "2026-02-28",
+      "gender": "Male",
+      "coaches": "ACteir1"
     },
     {
-      "id": "0e6e",
-      "from": "Bhopal",
-      "to": "Raipur",
-      "travelDate": "2026-02-03T19:52",
-      "bookingTime": "2/3/2026, 7:52:31 PM"
+      "id": "f51d",
+      "trainname": "Maharaja's Express",
+      "passangername": "Sanjay Yadav",
+      "numberofpassanger": "3",
+      "fromstation": "Delhi",
+      "tostation": "Lucknow",
+      "age": "22",
+      "date": "2026-02-20",
+      "gender": "Male",
+      "coaches": "General"
+    },
+    {
+      "id": "b826",
+      "trainname": "Rajdhani Express",
+      "passangername": "Krish Gour",
+      "numberofpassanger": "5",
+      "fromstation": "Bhopal",
+      "tostation": "Raipur",
+      "age": "25",
+      "date": "2026-02-04",
+      "gender": "Male"
+    },
+    {
+      "id": "a93f",
+      "trainname": "Darjeeling Train",
+      "passangername": "Priyesh Mishra",
+      "numberofpassanger": "4",
+      "fromstation": "New Jalpaiguri",
+      "tostation": "Darjeeling",
+      "age": "25",
+      "date": "2026-02-15",
+      "gender": "Male",
+      "coaches": "ACteir2"
+    },
+    {
+      "id": "0736",
+      "trainname": "Palace on Wheels",
+      "passangername": "Aditya bankey",
+      "numberofpassanger": "3",
+      "fromstation": "Kanpur",
+      "tostation": "Agra",
+      "age": "35",
+      "date": "2026-02-10",
+      "gender": "Male",
+      "coaches": "ACteir3"
+    },
+    {
+      "id": "9c76",
+      "trainname": "Shatabdi Express",
+      "passangername": "Tanish Parihar",
+      "numberofpassanger": "1",
+      "fromstation": "Bangalore",
+      "tostation": "Chennai",
+      "age": "28",
+      "date": "2026-03-07",
+      "gender": "Male"
+    },
+    {
+      "id": "1791",
+      "trainname": "Jodhpur Express",
+      "passangername": "Smriti Jaiswaal",
+      "numberofpassanger": "10",
+      "fromstation": "Jaisalmer",
+      "tostation": "Jodhpur Junction",
+      "age": "18",
+      "date": "2026-03-02",
+      "gender": "Female"
     }
   ]
 }
