@@ -104,11 +104,11 @@ const imageMap = {
       </div>
 
 <div className='flex justify-center gap-6'>
-        <p className="text-center mt-3 font-serif text-lg font-bold">
+        {/* <p className="text-center mt-3 font-serif text-lg font-bold">
         {item.date}
-      </p>
+      </p> */}
             <p className="text-center mt-3 font-serif text-lg font-bold">
-        {item.price}Rs
+        ₹{item.price} per person
       </p>
 </div>
 

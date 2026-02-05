@@ -4,7 +4,7 @@ import '../Tailwind.css'
 const About = () => {
   return (
     <>
-    <div><h1 className='text-center font-bold text-4xl font-serif mt-5'>About Us</h1></div>
+    <div><h1 className='text-center font-bold text-4xl text-[#c9a227] font-serif mt-5'>About Us</h1></div>
      <p className="mt-10 flex flex-col justify-center align-middle text-3xl text-center font-serif">
         <p>Welcome to FastTrack Railways.</p>  
         <p>We make train search and ticket booking simple, fast and reliable.</p>

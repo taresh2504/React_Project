@@ -66,47 +66,47 @@ const My_bookings = () => {
   }, [])
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr className='flex justify-center align-middle gap-3 border-2 ml-80 border-white mt-5'>
-            <th>Train Name</th>
-            <th>Passenger Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>No. of Passenger</th>
-            <th>Total Price</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Date</th>
-            <th>Edit</th>
-            <th>Cancel</th>
+    <div className="mt-6 flex justify-center align-middle">
+      <table className="w-fit border border-gray-400 border-collapse">
+        <thead className="bg-gray-800 text-white">
+          <tr>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Train Name</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Passenger Name</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Age</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Gender</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">No. of Passenger</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Total Price</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">From</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">To</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Date</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Edit</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Cancel</th>
           </tr>
         </thead>
 
-        <tbody className='flex flex-col justify-center align-middle gap-3 border-2 ml-80 border-white'>
+        <tbody className='gap-3 border-2 ml-80 border-white'>
           {mydata.map((item) => (
             <tr key={item.id}>
-              <td>{item.trainname}</td>
-              <td>{item.passangername}</td>
-              <td>{item.age}</td>
-              <td>{item.gender}</td>
-              <td>{item.numberofpassanger}</td>
-              <td>₹{item.totalPrice}</td>
-              <td>{item.fromstation}</td>
-              <td>{item.tostation}</td>
-              <td>{item.date}</td>
-              <td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.trainname}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.passangername}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.age}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.gender}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.numberofpassanger}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">₹{item.totalPrice}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.fromstation}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.tostation}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.date}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">
                 <button
-                  className='px-3 py-2 bg-green-500'
+                  className="bg-green-600 text-white px-3 py-1 rounded text-center"
                   onClick={() => myEdit(item)}
                 >
                   Edit
                 </button>
               </td>
-              <td>
+              <td className="border border-gray-400 px-3 py-2 text-center">
                 <button
-                  className='px-3 py-2 bg-red-500'
+                  className="bg-red-600 text-white px-3 py-1 rounded text-center"
                   onClick={() => myCancel(item.id)}
                 >
                   Cancel

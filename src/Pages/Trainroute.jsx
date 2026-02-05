@@ -34,13 +34,13 @@ import { RiArrowLeftRightFill } from "react-icons/ri";
   ">
       <img src={image} className='h-52 w-96 rounded-t-2xl' />
 
-      <h1 className='text-center text-[#c9a227] text-xl'>{name}</h1>
+      <h1 className='text-center text-[#c9a227] text-2xl'>{name}</h1>
 
       <p className='trr'>
         {source} <RiArrowLeftRightFill /> {destination}
       </p>
 
-      <p className="text-lg font-semibold text-yellow-400">
+      <p className="text-lg font-semibold text-center text-yellow-400">
         ₹{price} per person
       </p>
 

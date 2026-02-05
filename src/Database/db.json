@@ -320,6 +320,22 @@
       "userEmail": "taresh25202@gmail.com",
       "coaches": "ACteir1",
       "loggedUser": "taresh25202@gmail.com"
+    },
+    {
+      "id": "e37d",
+      "trainname": "Banihal - Baramula",
+      "passangername": "Khilesh Tandey",
+      "numberofpassanger": "3",
+      "fromstation": "Banihal",
+      "tostation": "Baramulla",
+      "age": "16",
+      "date": "2026-02-13",
+      "gender": "Male",
+      "price": 220,
+      "totalPrice": 660,
+      "userEmail": "taresh25202@gmail.com",
+      "coaches": "General",
+      "loggedUser": "taresh25202@gmail.com"
     }
   ]
 }
