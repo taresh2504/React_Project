@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-const BookingTrains = ({name,source,destination,price,departure_time,date}) => {
+const BookingTrains = ({name,source,destination,price}) => {
 
   let navigate = useNavigate('')
   
@@ -18,6 +18,7 @@ const BookingTrains = ({name,source,destination,price,departure_time,date}) => {
         trainname: name,
         fromstation: source,
         tostation: destination,
+        price: price
         // date: new Date().toISOString().slice(0,16) // optional
       }
     })

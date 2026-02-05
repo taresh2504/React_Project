@@ -46,6 +46,57 @@
       "id": "3b74"
     }
   ],
+  "search-history": [
+    {
+      "id": "f136",
+      "from": "Bhopal",
+      "to": "Raipur",
+      "date": "2026-02-06",
+      "loggedUser": null
+    },
+    {
+      "id": "e851",
+      "from": "Bhopal",
+      "to": "Jaipur",
+      "date": "2026-02-08",
+      "loggedUser": null
+    },
+    {
+      "id": "8edf",
+      "from": "Kochi",
+      "to": "Pune",
+      "date": "2026-02-27",
+      "loggedUser": null
+    },
+    {
+      "id": "0e1a",
+      "from": "Jaipur",
+      "to": "Kolkata",
+      "date": "2026-02-24",
+      "loggedUser": null
+    },
+    {
+      "id": "732f",
+      "from": "Surat",
+      "to": "Hyderabad",
+      "date": "2026-02-27",
+      "loggedUser": null
+    },
+    {
+      "id": "3620",
+      "from": "Surat",
+      "to": "Hyderabad",
+      "date": "2026-03-12",
+      "loggedUser": null
+    },
+    {
+      "id": "be51",
+      "from": "Bhopal",
+      "to": "Raipur",
+      "date": "2026-02-19",
+      "loggedUser": "taresh25202@gmail.com"
+    }
+  ],
   "train-route": [
     {
       "name": "Maharaja's Express",
@@ -70,6 +121,50 @@
       "date": "18 Jun 2026",
       "price": 145000,
       "id": "23f3"
+    }
+  ],
+  "smallroutes": [
+    {
+      "source": "Bhopal",
+      "destination": "Raipur",
+      "name": "Rajdhani Express",
+      "price": 2200,
+      "id": "079f"
+    },
+    {
+      "source": "Kochi",
+      "destination": "Pune",
+      "name": "Deccan Queen",
+      "price": 1800,
+      "id": "3785"
+    },
+    {
+      "source": "Bangalore",
+      "destination": "Chennai",
+      "name": "Shatabdi Express",
+      "price": 1500,
+      "id": "2ac5"
+    },
+    {
+      "source": "Surat",
+      "destination": "Hyderabad",
+      "name": "Vande Bharat Express",
+      "price": 2500,
+      "id": "75b4"
+    },
+    {
+      "source": "Jaipur",
+      "destination": "Kolkata",
+      "name": "Poorva Express",
+      "price": 2000,
+      "id": "b311"
+    },
+    {
+      "source": "Vadodra",
+      "destination": "Indore",
+      "name": "Shatabdi Express",
+      "price": 1600,
+      "id": "1e3d"
     }
   ],
   "booking-data": [
@@ -153,6 +248,78 @@
       "age": "18",
       "date": "2026-03-02",
       "gender": "Female"
+    },
+    {
+      "id": "0bda",
+      "trainname": "Maharaja's Express",
+      "passangername": "Taresh Tandy",
+      "numberofpassanger": "2",
+      "fromstation": "Delhi",
+      "tostation": "Lucknow",
+      "age": "20",
+      "date": "2026-03-08",
+      "gender": "Male",
+      "price": 125000,
+      "totalPrice": 250000,
+      "coaches": "ACteir1"
+    },
+    {
+      "id": "eb12",
+      "trainname": "Poorva Express",
+      "passangername": "Abhishek bharti",
+      "numberofpassanger": "8",
+      "fromstation": "Jaipur",
+      "tostation": "Kolkata",
+      "age": "19",
+      "date": "2026-02-06",
+      "gender": "Male",
+      "price": 2000,
+      "totalPrice": 16000
+    },
+    {
+      "id": "8f46",
+      "trainname": "Vande Bharat Express",
+      "passangername": "Tanmay bhai",
+      "numberofpassanger": "10",
+      "fromstation": "Surat",
+      "tostation": "Hyderabad",
+      "age": "28",
+      "date": "2026-03-02",
+      "gender": "Male",
+      "price": 2500,
+      "totalPrice": 25000,
+      "coaches": "General"
+    },
+    {
+      "id": "4f39",
+      "trainname": "Deccan Queen",
+      "passangername": "Aditya bankey",
+      "numberofpassanger": "2",
+      "fromstation": "Kochi",
+      "tostation": "Pune",
+      "age": "25",
+      "date": "2026-02-14",
+      "gender": "Male",
+      "price": 1800,
+      "totalPrice": 3600,
+      "userEmail": "a@gmail.com",
+      "loggedUser": "a@gmail.com"
+    },
+    {
+      "id": "db6b",
+      "trainname": "Rajdhani Express",
+      "passangername": "Taresh Tandy",
+      "numberofpassanger": "1",
+      "fromstation": "Bhopal",
+      "tostation": "Raipur",
+      "age": "20",
+      "date": "2026-02-13",
+      "gender": "Male",
+      "price": 2200,
+      "totalPrice": 2200,
+      "userEmail": "taresh25202@gmail.com",
+      "coaches": "ACteir1",
+      "loggedUser": "taresh25202@gmail.com"
     }
   ]
 }

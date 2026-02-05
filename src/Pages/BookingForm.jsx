@@ -7,22 +7,40 @@ const BookingForm = () => {
             let navigate = useNavigate()
 
   const location = useLocation()
+  // const trainData = location.state || {}
+
+  const handlechange = (e) => {
+  const { name, value } = e.target
+
+  if (name === "numberofpassanger") {
+    const total = Number(value) * Number(form.price)
+    setform({
+      ...form,
+      numberofpassanger: value,
+      totalPrice: total
+    })
+  } else {
+    setform({ ...form, [name]: value })
+  }
+}
+
+
   const trainData = location.state || {}
 
-  let handlechange = (e) => {
-    setform({ ...form, [e.target.name]: e.target.value })
-  }
+  const [form, setform] = useState({
+  trainname: trainData.trainname || '',
+  passangername: '',
+  numberofpassanger: '',
+  fromstation: trainData.fromstation || '',
+  tostation: trainData.tostation || '',
+  age: '',
+  date: '',
+  gender: '',
+  price: trainData.price || 0,      // ✅ per person
+  totalPrice: 0  ,                   // ✅ calculated 
+  userEmail: localStorage.getItem("useremail")
+})
 
-  let [form, setform] = useState({
-    trainname: trainData.trainname || '',
-    passangername: '',
-    numberofpassanger: '',
-    fromstation: trainData.fromstation || '',
-    tostation: trainData.tostation || '',
-    age: '',
-    date: trainData.date || '',
-    gender:''
-    })
 
     let handlesubmit=(e)=>{
       e.preventDefault()
@@ -94,7 +112,8 @@ const BookingForm = () => {
       }
 
       if(valid){
-        axios.post("http://localhost:3000/booking-data", form).then(()=>{
+        let loggedEmail = localStorage.getItem("useremail")
+        axios.post("http://localhost:3000/booking-data", {...form, loggedUser:loggedEmail}).then(()=>{
           alert("Booking successful")
           navigate("/my_bookings")
         }).catch((err)=>{
@@ -107,7 +126,7 @@ const BookingForm = () => {
   return (
     <>
     <div className='ml-115 mt-5'>
-      <div className='text-center border-2 border-white w-100 h-130 rounded-2xl'>
+      <div className='text-center border-2 border-white w-100 h-140 rounded-2xl'>
       <form onSubmit={handlesubmit}>
         <h1 className='mt-4 font-serif text-2xl font-bold'>Booking Form</h1>
         <div className='mt-3'>
@@ -117,7 +136,10 @@ const BookingForm = () => {
         <input type="text" className='formbox' placeholder='Enter name' name="passangername" onChange={handlechange} value={form.passangername} id="" /> <br />
         </div>
         <div className='mt-3'>
-          <input type="text" className='formbox'  placeholder='Enter no. of passanger' name="numberofpassanger" onChange={handlechange} value={form.numberofpassanger} id="" /> <br />
+          <input type="text" className="formbox" placeholder="No. of Passenger" name="numberofpassanger" value={form.numberofpassanger} onChange={handlechange}/><br />
+        </div>
+        <div className='mt-3'>
+          <input type="text" className="formbox" placeholder="Total Price" value={`${form.totalPrice}`} readOnly/> <br />
         </div>
         <div className='mt-3'>
           <input type="text" className='formbox' placeholder='From Station' name="fromstation" onChange={handlechange} readOnly value={form.fromstation} id="" /> <br />

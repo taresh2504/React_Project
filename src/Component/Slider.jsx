@@ -1,62 +1,101 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import React, { useState } from 'react'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import train1 from '../assets/train1.jpg'
-import train2 from '../assets/train2.jpg'
-import train3 from '../assets/jalpaiguri_darjeling.jpg'
-import train4 from '../assets/munbai_goa.jpg'
-import train5 from '../assets/baramula-jammu.jpg'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FcSearch } from "react-icons/fc";
 
-// Import Swiper styles
+import train1 from '../assets/train1.jpg';
+import train2 from '../assets/train2.jpg';
+import train3 from '../assets/jalpaiguri_darjeling.jpg';
+import train4 from '../assets/munbai_goa.jpg';
+import train5 from '../assets/baramula-jammu.jpg';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import '../App.css';
-
-// import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function App() {
-const [fromselected, setfromselected] = useState('');
+
+  const navigate = useNavigate();
+
+  const [fromselected, setfromselected] = useState('');
   const [toselected, settoselected] = useState('');
-  const [date, setDate] = useState(''); // New state for date
+  const [date, setDate] = useState('');
 
-  const fromStations = ["Bhopal", "Kochi", "Bangalore", "Surat", "Jaipur", "Vadodara"];
-  const toStations = ["Raipur", "Pune", "Chennai", "Hyderabad", "Kolkata", "Indore"];
+  // ✅ SMALL ROUTES (sirf source & destination use ho raha hai)
+  const smallroutes = [
+    { source: "Bhopal", destination: "Raipur" },
+    { source: "Kochi", destination: "Pune" },
+    { source: "Bangalore", destination: "Chennai" },
+    { source: "Surat", destination: "Hyderabad" },
+    { source: "Jaipur", destination: "Kolkata" },
+    { source: "Vadodra", destination: "Indore" }
+  ];
 
-  const handleSubmit = async (e) => {
+  // ✅ STATIONS auto-generate from smallroutes
+  const stations = [
+    ...new Set(
+      smallroutes.flatMap(r => [r.source, r.destination])
+    )
+  ];
+
+  const handleSearch = async (e) => {
     e.preventDefault();
 
-    // Basic Validation
+    // 🔐 LOGIN CHECK
+    const isLoggedIn = localStorage.getItem("isLoggedin") === "true";
+    if (!isLoggedIn) {
+      alert("Please login first! 🔐");
+      navigate("/login");
+      return;
+    }
+
+    // 🧪 VALIDATION
     if (!fromselected || !toselected || !date) {
       alert("Please fill all fields");
       return;
     }
 
-    const bookingData = {
-      from: fromselected,
-      to: toselected,
-      travelDate: date,
-      bookingTime: new Date().toLocaleString()
-    };
+    if (fromselected === toselected) {
+      alert("From and To stations cannot be same");
+      return;
+    }
 
+    // 🚫 DIRECT ROUTE CHECK (IMPORTANT)
+    const routeExists = smallroutes.some(
+      (route) =>
+        route.source === fromselected &&
+        route.destination === toselected
+    );
+
+    if (!routeExists) {
+      alert("No direct routes available 🚫");
+      return;
+    }
+
+    // 🟢 SAVE SEARCH HISTORY + NAVIGATE
     try {
-      // Replace with your actual json-server URL
-      const response = await axios.post('http://localhost:3000/booking-data', bookingData);
-      
-      if (response.status === 201) {
-        alert('Booking Saved Successfully!');
-        // Reset form
-        setfromselected('');
-        settoselected('');
-        setDate('');
-      }
-    } catch (error) {
-      console.error("Error saving booking:", error);
-      alert("Failed to save booking. Make sure json-server is running.");
+      await axios.post("http://localhost:3000/search-history", {
+        from: fromselected,
+        to: toselected,
+        date,
+        loggedUser: localStorage.getItem("useremail")
+      });
+
+      navigate("/trains", {
+      state: {
+        from: fromselected,
+        to: toselected,
+        date
+  }
+});
+
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
     }
   };
 
@@ -64,47 +103,60 @@ const [fromselected, setfromselected] = useState('');
     <>
       <div className='slider-container'>
         <div className='searchbox'>
-          {/* ... nav section ... */}
-          
-          {/* Wrap inputs in a form to handle submission */}
-          <form onSubmit={handleSubmit}>
-            <div>
-              <select 
-                className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
-                value={fromselected} 
-                onChange={(e) => setfromselected(e.target.value)}
-              >
-                <option value="" disabled>From Station</option>
-                {fromStations.map((item, index) => (
-                  <option key={index} className='bg-purple-400' value={item}>{item}</option>
-                ))}
-              </select>
-            </div>
-            <br />
-            <div>
-              <select 
-                className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
-                value={toselected} 
-                onChange={(e) => settoselected(e.target.value)}
-              >
-                <option value=""  disabled>To Station</option>
-                {toStations.map((item, index) => (
-                  <option key={index} className='bg-purple-400' value={item}>{item}</option>
-                ))}
-              </select>
-            </div>
-            <br />
-            <input 
-              type="datetime-local" 
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold' 
-            />
+          <form onSubmit={handleSearch}>
+
+            {/* FROM */}
+            <select
+              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
+              value={fromselected}
+              onChange={(e) => setfromselected(e.target.value)}
+            >
+              <option value="">From Station</option>
+              {stations.map((s, i) => (
+                <option key={i} value={s} disabled={s === toselected}>
+                  {s}
+                </option>
+              ))}
+            </select>
+
             <br /><br />
-            <button type='submit' className='btn'>Search & Book</button>
+
+            {/* TO */}
+            <select
+              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
+              value={toselected}
+              onChange={(e) => settoselected(e.target.value)}
+            >
+              <option value="">To Station</option>
+              {stations.map((s, i) => (
+                <option key={i} value={s} disabled={s === fromselected}>
+                  {s}
+                </option>
+              ))}
+            </select>
+
+            <br /><br />
+
+            {/* DATE */}
+            <input
+              type="date"
+              value={date}
+              min={new Date().toISOString().split("T")[0]}
+              onChange={(e) => setDate(e.target.value)}
+              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
+            />
+
+            <br /><br />
+
+            <button type='submit' className='btn'>
+              Search Trains
+            </button>
+
           </form>
         </div>
       </div>
+
+      {/* 🚆 SWIPER — NO CHANGES */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -112,9 +164,7 @@ const [fromselected, setfromselected] = useState('');
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={{ clickable: true }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"

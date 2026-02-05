@@ -8,7 +8,7 @@ const My_bookings = () => {
   const [open, setOpen] = useState(false)
 
   const [formData, setFormData] = useState({
-    trainame: "",
+    trainname: "",
     passangername: "",
     age: "",
     gender: "",
@@ -18,10 +18,17 @@ const My_bookings = () => {
     date: ""
   })
 
+  let currentEmail = localStorage.getItem("useremail")
+
+
   const loadData = async () => {
     const api = "http://localhost:3000/booking-data"
     const response = await axios.get(api)
-    setMyData(response.data)
+
+    let filterData = response.data.filter(
+      (item) => item.loggedUser == currentEmail
+    )
+    setMyData(filterData)
   }
 
   const myCancel = async (id) => {
@@ -68,6 +75,7 @@ const My_bookings = () => {
             <th>Age</th>
             <th>Gender</th>
             <th>No. of Passenger</th>
+            <th>Total Price</th>
             <th>From</th>
             <th>To</th>
             <th>Date</th>
@@ -84,6 +92,7 @@ const My_bookings = () => {
               <td>{item.age}</td>
               <td>{item.gender}</td>
               <td>{item.numberofpassanger}</td>
+              <td>₹{item.totalPrice}</td>
               <td>{item.fromstation}</td>
               <td>{item.tostation}</td>
               <td>{item.date}</td>
@@ -114,7 +123,7 @@ const My_bookings = () => {
 <input
   type="text"
   name="trainame"
-  value={formData.trainame}
+  value={formData.trainname}
   onChange={handlechange}
 />
 

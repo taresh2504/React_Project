@@ -15,7 +15,7 @@ const Home = () => {
 
   const [trainRoutes, setTrainRoutes] = useState([])
 
-  // image mapping (KEY PART 🔥)
+  // 🔥 IMAGE MAPPING (STATIC)
   const trainImages = {
     "Maharaja's Express": mhe,
     "Palace on Wheels": pow,
@@ -42,18 +42,18 @@ const Home = () => {
 
       <br /><br />
 
-      {/* 🔁 DYNAMIC RENDER */}
+      {/* 🔁 DYNAMIC TRAIN CARDS */}
       <div className='flex justify-center align-middle gap-2'>
         {trainRoutes.map((train) => (
           <Trainroute
-            key={train.id}
-            image={trainImages[train.name]}
-            name={train.name}
-            source={train.source}
-            destination={train.destination}
-            date={train.date}
-            price={`₹${train.price} per person`}
+          key={train.id}
+          image={trainImages[train.name]}
+          name={train.name}
+          source={train.source}
+          destination={train.destination}
+          price={train.price}   // ✅ NUMBER ONLY 
           />
+
         ))}
       </div>
 
