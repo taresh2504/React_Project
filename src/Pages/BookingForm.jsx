@@ -36,6 +36,7 @@ const BookingForm = () => {
   age: '',
   date: '',
   gender: '',
+  coach: '',
   price: trainData.price || 0,      // ✅ per person
   totalPrice: 0  ,                   // ✅ calculated 
   userEmail: localStorage.getItem("useremail")
@@ -106,6 +107,11 @@ const BookingForm = () => {
         valid = false
       }
 
+      else if(form.coach.trim()==''){
+        alert('please select coach')
+        valid = false
+      }
+
       else if (form.gender === ''){
         alert('Please select gender')
         valid = false
@@ -113,7 +119,7 @@ const BookingForm = () => {
 
       if(valid){
         let loggedEmail = localStorage.getItem("useremail")
-        axios.post("http://localhost:3000/booking-data", {...form, loggedUser:loggedEmail}).then(()=>{
+        axios.post("http://localhost:3000/booking-data", {...form,price: form.price, loggedUser:loggedEmail}).then(()=>{
           alert("Booking successful")
           navigate("/my_bookings")
         }).catch((err)=>{
@@ -154,7 +160,7 @@ const BookingForm = () => {
            <input type="date" className='formbox' name="date" onChange={handlechange} value={form.date} id="" /> <br />
         </div>
         <div className='mt-3'>
-        <select name="coaches" placeholder='Select Coach' className='formbox' onChange={handlechange} id="">
+        <select name="coach" placeholder='Select Coach' value={form.coach} className='formbox' onChange={handlechange} id="">
           <option value="" disabled>Select Coach</option>
           <option value="Sleeper">Sleeper</option>
           <option value="General">General</option>

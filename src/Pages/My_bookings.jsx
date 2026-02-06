@@ -11,8 +11,11 @@ const My_bookings = () => {
     trainname: "",
     passangername: "",
     age: "",
+    coach: "",
     gender: "",
     numberofpassanger: "",
+    price: 0,           // ✅ ADD
+    totalPrice: 0,
     fromstation: "",
     tostation: "",
     date: ""
@@ -46,8 +49,24 @@ const My_bookings = () => {
 
   // 👉 INPUT CHANGE
   const handlechange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+  const { name, value } = e.target
+
+  if (name === "numberofpassanger") {
+    const total = Number(value) * Number(formData.price)
+
+    setFormData({
+      ...formData,
+      numberofpassanger: value,
+      totalPrice: total
+    })
+  } else {
+    setFormData({
+      ...formData,
+      [name]: value
+    })
   }
+}
+
 
   // 👉 UPDATE SUBMIT
   const handlesubmit = async (e) => {
@@ -66,6 +85,7 @@ const My_bookings = () => {
   }, [])
 
   return (
+    <>
     <div className="mt-6 flex justify-center align-middle">
       <table className="w-fit border border-gray-400 border-collapse">
         <thead className="bg-gray-800 text-white">
@@ -73,6 +93,7 @@ const My_bookings = () => {
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Train Name</th>
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Passenger Name</th>
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Age</th>
+            <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Coach</th>
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Gender</th>
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">No. of Passenger</th>
             <th className="border border-gray-400 px-3 py-2 text-[#c9a227]">Total Price</th>
@@ -90,6 +111,7 @@ const My_bookings = () => {
               <td className="border border-gray-400 px-3 py-2 text-center">{item.trainname}</td>
               <td className="border border-gray-400 px-3 py-2 text-center">{item.passangername}</td>
               <td className="border border-gray-400 px-3 py-2 text-center">{item.age}</td>
+              <td className="border border-gray-400 px-3 py-2 text-center">{item.coach}</td>
               <td className="border border-gray-400 px-3 py-2 text-center">{item.gender}</td>
               <td className="border border-gray-400 px-3 py-2 text-center">{item.numberofpassanger}</td>
               <td className="border border-gray-400 px-3 py-2 text-center">₹{item.totalPrice}</td>
@@ -116,65 +138,77 @@ const My_bookings = () => {
           ))}
         </tbody>
       </table>
+      </div>
 
+    <div>
       {open && (
-        <div className='mt-5'>
+        <div className='ml-115 mt-5'>
+        <div className='flex justify-center align-middle text-center border-2 border-white w-100 h-140 rounded-2xl'>
           <form onSubmit={handlesubmit}>
-<input
-  type="text"
-  name="trainame"
-  value={formData.trainname}
-  onChange={handlechange}
-/>
 
-<input
-  type="text"
-  name="passangername"
-  value={formData.passangername}
-  onChange={handlechange}
-/>
+          <h1 className='mt-4 font-serif text-2xl font-bold'>Update Form</h1>
 
-<input
-  type="text"
-  name="age"
-  value={formData.age}
-  onChange={handlechange}
-/>
+          <div className='mt-3'>
+            <input type="text" name="trainname" value={formData.trainname} className='formbox' onChange={handlechange}/> <br />
+          </div>
 
-<input
-  type="text"
-  name="numberofpassanger"
-  value={formData.numberofpassanger}
-  onChange={handlechange}
-/>
+          <div className='mt-3'>       
+            <input type="text" name="passangername" className='formbox' value={formData.passangername} onChange={handlechange}/>
+          </div> 
 
-<input
-  type="text"
-  name="fromstation"
-  value={formData.fromstation}
-  onChange={handlechange}
-/>
-
-<input
-  type="text"
-  name="tostation"
-  value={formData.tostation}
-  onChange={handlechange}
-/>
-
-<input
-  type="date"
-  name="date"
-  value={formData.date}
-  onChange={handlechange}
-/>
-
-
-            <button type="submit">Update Booking</button>
-          </form>
+        <div className='mt-3'>
+            <input type="text" name="age" className='formbox' value={formData.age} onChange={handlechange}/>
         </div>
+
+        <div className='mt-3'>
+            <input type="text" name="numberofpassanger" className='formbox' value={formData.numberofpassanger} onChange={handlechange}/>
+        </div>
+
+        <div className='mt-3'>
+          <input type="text" className="formbox" placeholder="Total Price" value={`${formData.totalPrice}`} readOnly/> <br />
+        </div>
+
+        <div className='mt-3'>
+            <input type="text" name="fromstation" className='formbox' value={formData.fromstation} onChange={handlechange}/>
+        </div>
+
+        <div className='mt-3'>
+            <input type="text" name="tostation" className='formbox' value={formData.tostation} onChange={handlechange}/>
+        </div>
+
+        <div className='mt-3'>
+            <input type="date" name="date" className='formbox' value={formData.date} onChange={handlechange}/>
+        </div>
+
+        <div className='mt-3'>
+        <select name="coach" value={formData.coach} placeholder='Select Coach' className='formbox' onChange={handlechange} id="">
+          <option value="" disabled>Select Coach</option>
+          <option value="Sleeper">Sleeper</option>
+          <option value="General">General</option>
+          <option value="ACteir1">ACtier1</option>
+          <option value="ACteir2">ACtier2</option>
+          <option value="ACteir3">ACtier3</option>
+        </select> <br />
+        </div>
+
+        <div className='mt-3'>
+        <div className='formbox3'>
+        <div className='flex justify-center align-middle gap-4'> 
+        <span className='male'>Male<input type="radio" className='ml-0.5' name="gender" value="Male" onChange={handlechange} id="" /></span>
+        <span className='female'>Female<input type="radio" className='ml-0.5' name="gender" value="Female" onChange={handlechange} id="" /> </span>
+        <span className='other'>Other<input type="radio" className='ml-0.5' name="gender" value="Other" onChange={handlechange} id="" /></span>
+        </div>
+        </div> 
+        </div>
+
+          <button type="submit" className='confirmbooking'>Update Booking</button>
+          </form>
+        </div> 
+      </div>             
       )}
     </div>
+    
+    </>
   )
 }
 

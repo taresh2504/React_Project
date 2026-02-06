@@ -348,6 +348,18 @@ body {
   border-radius: 10px;
 }
 
+.formbox3{
+  margin-left: 0px;
+  border: 2px solid red;
+  height: 30px;
+  width: 300px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
 .confirmbooking{
   margin-top: 25px;
   height: 40px;
