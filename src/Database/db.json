@@ -416,6 +416,22 @@
       "totalPrice": 10800,
       "userEmail": "taresh25202@gmail.com",
       "loggedUser": "taresh25202@gmail.com"
+    },
+    {
+      "id": "0066",
+      "trainname": "Banihal - Baramula",
+      "passangername": "Qasim khan",
+      "numberofpassanger": "3",
+      "fromstation": "Banihal",
+      "tostation": "Baramulla",
+      "age": "28",
+      "date": "2026-02-21",
+      "gender": "Male",
+      "coach": "General",
+      "price": 220,
+      "totalPrice": 660,
+      "userEmail": "q@gmail.com",
+      "loggedUser": "q@gmail.com"
     }
   ]
 }

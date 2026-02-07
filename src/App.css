@@ -436,6 +436,65 @@ body {
   cursor: pointer;
 }
 
+/* =========================
+   📱 MOBILE VIEW (≤479px)
+   ========================= */
+@media (max-width: 479px) {
+
+  /* 🔍 Train search box */
+  .train-searchbox {
+    width: 95%;
+    height: auto;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .box-holder {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .from-station {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* 🚆 Train card wrapper (parent div) */
+  .train-card-wrapper {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+
+  /* 🚆 Booking train card */
+  .booking-card {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+  }
+
+  .booking-card p {
+    font-size: 16px;
+  }
+
+  /* 💰 Price alignment */
+  .price-box {
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  /* 🔘 Book now button */
+  .book-btn-wrapper {
+    margin-left: 0;
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .book-btn-wrapper button {
+    width: 90%;
+  }
+}
+
+
 
 /* .male{
   margin-left: -60px;

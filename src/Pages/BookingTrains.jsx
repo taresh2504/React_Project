@@ -27,11 +27,11 @@ const BookingTrains = ({name,source,destination,price}) => {
   // let Bf = navigate('/BookingForm') className='mt-1.5 text-2xl'icon className='mt-1.5 text-2xl' price = className='mt-1.5 -ml-3'
   return (
     <>
-      <div className='h-30 w-180 border-2 border-b-white rounded-2xl font-serif'>
+      <div className='h-30 w-180 border-2 border-b-white rounded-2xl font-serif booking-card'>
         <p className='font-bold text-2xl ml-5 mt-4'>{name}</p>
         <div><p className='flex justify-items-center align-middle gap-4 ml-5' >{source} <RiArrowLeftRightFill className='mt-1' /> {destination} </p></div>
         <div><p className='ml-4'><MdOutlineCurrencyRupee className='mt-1.5 text-2xl' /><p className='ml-7 -mt-7 text-[20px] font-serif'>{price}</p></p></div>
-        <div className='flex justify-center align-middle ml-130 -mt-15 '><button className='rounded-2xl pt-1 pl-1 pb-1 pr-1 bg-white text-black h-9 w-20 font-bold' onClick={bf}>Book Now</button></div>
+        <div className='flex justify-center align-middle ml-130 -mt-15 book-btn-wrapper '><button className='rounded-2xl pt-1 pl-1 pb-1 pr-1 bg-white text-black h-9 w-20 font-bold' onClick={bf}>Book Now</button></div>
       </div>
     </>
   )

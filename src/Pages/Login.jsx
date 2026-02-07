@@ -13,30 +13,32 @@ const Login = () => {
   // 👁️ password toggle state
   const [showPassword, setShowPassword] = useState(false)
 
-  let [form,setform] = useState({
-    myemail : "",
-    mypassword : ""
+  let [form, setform] = useState({
+    myemail: "",
+    mypassword: ""
   })
 
-  let handlechange = (e)=>{
-    setform({...form,[e.target.name]:e.target.value})
+  let handlechange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value })
   }
 
-  let handlesubmit = (e)=>{
+  let handlesubmit = (e) => {
     e.preventDefault()
     let valid = true
 
-    if (form.myemail.trim()==''){
+    if (form.myemail.trim() === '') {
       alert('please enter your email')
       valid = false
     }
-
-    else if (!(form.myemail.includes('@gmail.com') || form.myemail.includes('@yahoo.com') || form.myemail.includes('@outlook.com'))) {
+    else if (
+      !(form.myemail.includes('@gmail.com') ||
+        form.myemail.includes('@yahoo.com') ||
+        form.myemail.includes('@outlook.com'))
+    ) {
       alert('please enter a valid email')
       valid = false
     }
-
-    else if (form.mypassword.trim() == '') {
+    else if (form.mypassword.trim() === '') {
       alert('please enter your password')
       valid = false
     }
@@ -63,62 +65,65 @@ const Login = () => {
 
     if (valid) {
       let users = JSON.parse(localStorage.getItem('users')) || []
-      let authuser = users.find((e) => e.myemail === form.myemail && e.mypassword === form.mypassword)
+      let authuser = users.find(
+        (e) => e.myemail === form.myemail && e.mypassword === form.mypassword
+      )
 
       if (authuser) {
-        localStorage.setItem("isLoggedin","true");
-        localStorage.setItem("currentUser",JSON.stringify(authuser));
+        localStorage.setItem("isLoggedin", "true")
+        localStorage.setItem("currentUser", JSON.stringify(authuser))
         localStorage.setItem("useremail", authuser.myemail)
-        alert('login succes ✅')
+        alert('login success ✅')
         navigate('/home')
-        return
-      }
-      else{
+      } else {
         alert('email and password did not matched')
       }
     }
+  }
 
-
-    }
-  
-
-    return (
+  return (
     <>
-      <div className='login-wrapper'>
+      <div className="login-wrapper max-[479px]:px-3">
         <LightRays />
 
-        <div className='login-box'>
-          <h1 className='text-center text-4xl font-serif'>Login</h1>
+        <div className="login-box max-[479px]:w-full max-[479px]:mx-auto max-[479px]:mt-10">
 
-          <form className='ml-8 font-serif' onSubmit={handlesubmit}>
+          <h1 className="text-center text-4xl font-serif max-[479px]:text-3xl">
+            Login
+          </h1>
+
+          <form
+            className="ml-8 font-serif max-[479px]:ml-0"
+            onSubmit={handlesubmit}
+          >
             <br />
 
-            <p className='name-head'>Enter Email</p>
+            <p className="name-head">Enter Email</p>
             <input
               type="email"
-              className='name-box2'
-              placeholder='Enter your email'
-              name='myemail'
+              className="name-box2 max-[479px]:w-full"
+              placeholder="Enter your email"
+              name="myemail"
               onChange={handlechange}
               value={form.myemail}
             />
 
             <br /><br />
 
-            <p className='name-head'>Enter Password</p>
+            <p className="name-head">Enter Password</p>
 
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                className='name-box2 pr-10'
-                placeholder='Enter your Password'
-                name='mypassword'
+                className="name-box2 pr-10 max-[479px]:w-full"
+                placeholder="Enter your Password"
+                name="mypassword"
                 onChange={handlechange}
                 value={form.mypassword}
               />
 
               <span
-                className="absolute right-12 top-1/2 -translate-y-1/2 cursor-pointer text-black"
+                className="absolute right-12 max-[479px]:right-3 top-1/2 -translate-y-1/2 cursor-pointer text-black"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword
@@ -130,18 +135,25 @@ const Login = () => {
 
             <br /><br />
 
-            <button type="submit" className='login-button'>Log in</button>
+            <button
+              type="submit"
+              className="login-button max-[479px]:w-full"
+            >
+              Log in
+            </button>
 
             <br />
-            <p className='login-signup'>
+
+            <p className="login-signup max-[479px]:text-center">
               Don't have Account ?
               <span
                 onClick={() => navigate('/signup')}
-                className='login-signup-link'
+                className="login-signup-link"
               >
                 {' '}Sign-up
               </span>
             </p>
+
           </form>
         </div>
       </div>
@@ -149,6 +161,4 @@ const Login = () => {
   )
 }
 
-
 export default Login
-

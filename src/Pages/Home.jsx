@@ -36,36 +36,33 @@ const Home = () => {
     <>
       <Slider />
 
-      <h1 className='text-center mt-4 text-4xl text-[#c9a227]'>
+      {/* Heading */}
+      <h1 className='text-center mt-4 text-2xl sm:text-3xl md:text-4xl text-[#c9a227]'>
         Explore premium
       </h1>
 
-      <br /><br />
-
       {/* 🔁 DYNAMIC TRAIN CARDS */}
-      <div className='flex justify-center align-middle gap-2'>
-        {trainRoutes.map((train) => (
-          <Trainroute
-          key={train.id}
-          image={trainImages[train.name]}
-          name={train.name}
-          source={train.source}
-          destination={train.destination}
-          price={train.price}   // ✅ NUMBER ONLY 
-          />
-
-        ))}
+      <div className='px-4 mt-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center'>
+          {trainRoutes.map((train) => (
+            <Trainroute
+              key={train.id}
+              image={trainImages[train.name]}
+              name={train.name}
+              source={train.source}
+              destination={train.destination}
+              price={train.price}
+            />
+          ))}
+        </div>
       </div>
 
-      <br />
-
-      <h1 className='text-center mt-4 text-4xl text-[#e5e7eb]'>
+      {/* Winter Special */}
+      <h1 className='text-center mt-10 text-2xl sm:text-3xl md:text-4xl text-[#e5e7eb]'>
         Winter Special
       </h1>
 
-      <br />
-
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center px-4 mt-6'>
         <Specialtrain />
       </div>
     </>

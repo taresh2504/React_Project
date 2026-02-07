@@ -94,7 +94,7 @@ const Trains = () => {
         </p>
       ) : (
         finalTrains.map((e) => (
-          <div key={e.id} className='flex justify-center mt-5 -ml-9'>
+          <div key={e.id} className='flex justify-center mt-5 -ml-9 train-card-wrapper'>
             <BookingTrains
               name={e.name}
               source={e.source}
