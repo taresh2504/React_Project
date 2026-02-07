@@ -20,6 +20,9 @@ const About = () => {
         <p>Our mission is to make railway travel hassle-free for everyone.
 </p>
       </div>
+
+
+      
     </>
   )
 }
