@@ -99,64 +99,74 @@ export default function App() {
     }
   };
 
+  // top-6 left-1/2 -translate-x-1/2
+
+          // bg-white/90 backdrop-blur-md
+          // rounded-2xl shadow-lg
+
+          // w-[90%] sm:w-[70%] md:w-[420px]
+          // p-4
+
   return (
-    <>
-      <div className='slider-container'>
-        <div className='searchbox'>
-          <form onSubmit={handleSearch}>
+  <>
+    {/* 🔍 SLIDER + SEARCH CONTAINER */}
+    <div className="slider-container relative w-full">
 
-            {/* FROM */}
-            <select
-              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
-              value={fromselected}
-              onChange={(e) => setfromselected(e.target.value)}
-            >
-              <option value="">From Station</option>
-              {stations.map((s, i) => (
-                <option key={i} value={s} disabled={s === toselected}>
-                  {s}
-                </option>
-              ))}
-            </select>
+      {/* 🔎 SEARCH BOX */}
+      <div
+        className="
+          searchbox
+          absolute z-90
+          
+        "
+      >
+        <form onSubmit={handleSearch} className="flex flex-col gap-4">
 
-            <br /><br />
+          {/* FROM */}
+          <select
+            className="border-2 border-black h-9 w-full rounded-2xl font-serif font-semibold px-3"
+            value={fromselected}
+            onChange={(e) => setfromselected(e.target.value)}
+          >
+            <option value="">From Station</option>
+            {stations.map((s, i) => (
+              <option key={i} value={s} disabled={s === toselected}>
+                {s}
+              </option>
+            ))}
+          </select>
 
-            {/* TO */}
-            <select
-              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
-              value={toselected}
-              onChange={(e) => settoselected(e.target.value)}
-            >
-              <option value="">To Station</option>
-              {stations.map((s, i) => (
-                <option key={i} value={s} disabled={s === fromselected}>
-                  {s}
-                </option>
-              ))}
-            </select>
+          {/* TO */}
+          <select
+            className="border-2 border-black h-9 w-full rounded-2xl font-serif font-semibold px-3"
+            value={toselected}
+            onChange={(e) => settoselected(e.target.value)}
+          >
+            <option value="">To Station</option>
+            {stations.map((s, i) => (
+              <option key={i} value={s} disabled={s === fromselected}>
+                {s}
+              </option>
+            ))}
+          </select>
 
-            <br /><br />
+          {/* DATE */}
+          <input
+            type="date"
+            value={date}
+            min={new Date().toISOString().split("T")[0]}
+            onChange={(e) => setDate(e.target.value)}
+            className="border-2 border-black h-9 w-full rounded-2xl font-serif font-semibold px-3"
+          />
 
-            {/* DATE */}
-            <input
-              type="date"
-              value={date}
-              min={new Date().toISOString().split("T")[0]}
-              onChange={(e) => setDate(e.target.value)}
-              className='border-2 border-black h-9 w-89 rounded-2xl font-serif font-semibold'
-            />
+          <button type="submit" className="btn">
+            Search Trains
+          </button>
 
-            <br /><br />
-
-            <button type='submit' className='btn'>
-              Search Trains
-            </button>
-
-          </form>
-        </div>
+        </form>
       </div>
 
-      {/* 🚆 SWIPER — NO CHANGES */}
+      {/* 🚆 SWIPER (AB SAME CONTAINER ME) */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -169,12 +179,24 @@ export default function App() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img src={train2} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={train1} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={train3} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={train4} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={train5} alt="" /></SwiperSlide>
+        <SwiperSlide>
+          <img src={train2} className="w-full h-[240px] sm:h-[360px] md:h-[480px] object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={train1} className="w-full h-[240px] sm:h-[360px] md:h-[480px] object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={train3} className="w-full h-[240px] sm:h-[360px] md:h-[480px] object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={train4} className="w-full h-[240px] sm:h-[360px] md:h-[480px] object-cover" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={train5} className="w-full h-[240px] sm:h-[360px] md:h-[480px] object-cover" />
+        </SwiperSlide>
       </Swiper>
-    </>
-  );
+
+    </div>
+  </>
+)
 }

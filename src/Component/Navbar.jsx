@@ -122,8 +122,10 @@ const Navbar = () => {
 
       {!isLoggedin && (
         <>
+          <div>
           <Link to='/signup'>Sign-Up</Link>
           <Link to='/login'>Log-in</Link>
+          </div>
         </>
       )}
       {isLoggedin && (
