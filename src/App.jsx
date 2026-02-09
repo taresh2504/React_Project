@@ -9,6 +9,8 @@ import Signup from "./Pages/Signup";
 import Trains from "./Pages/Trains";
 import BookingTrains from "./Pages/BookingTrains";
 import Footer from "./Component/Footer";
+import Practice from "./Pages/Practice";
+import MidChild from "./Pages/MidChild";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
     {/* <Home/> */}
     {/* <Signup/> */}
     <Routing/>
+    {/* <Practice/> */}
+    {/* <MidChild/> */}
     {/* <Footer/> */}
     {/* <Trains/> */}
     {/* <BookingTrains/> */}

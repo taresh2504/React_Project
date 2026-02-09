@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedin")
-    localStorage.removeItem("currentser")
+    localStorage.removeItem("currentuser")
     navigate('/Home')
   }
 
