@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 const Practice = () => {
 
+    
+
     let [traindata,settraindata] = useState([])
 
     useEffect(()=>{
@@ -41,6 +43,9 @@ const Practice = () => {
     </>
   )
 }
+
+
+
 
 export default Practice
 
