@@ -10,8 +10,6 @@ const Signup = () => {
 
   let navigate = useNavigate()
 
-  
-
   // 👁️ password toggle states
   const [showPassword, setShowPassword] = useState(false)
   const [showCPassword, setShowCPassword] = useState(false)
