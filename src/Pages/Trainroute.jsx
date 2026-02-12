@@ -76,3 +76,5 @@ const Trainroute = ({ image, name, source, destination, price }) => {
 }
 
 export default Trainroute
+
+
