@@ -18,7 +18,6 @@ const Practice = () => {
 
   return (
     <>
-      
         <table border={1}>
             <thead>
                 <th>Name</th>
@@ -38,7 +37,6 @@ const Practice = () => {
             </tbody>
              )})}
         </table>
-
     </>
   )
 }
