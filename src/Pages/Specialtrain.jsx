@@ -130,5 +130,3 @@ const Specialtrain = () => {
 
 export default Specialtrain
 
-
-
