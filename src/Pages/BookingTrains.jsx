@@ -7,6 +7,7 @@ import { FcAlarmClock } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { Link } from 'react-router-dom';
+// Booking trains page 
 
 const BookingTrains = ({name,source,destination,price}) => {
 
