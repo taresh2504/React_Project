@@ -16,6 +16,8 @@ import 'swiper/css/navigation';
 import '../App.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+// Slider.jsx Page
+
 export default function App() {
 
   const navigate = useNavigate();

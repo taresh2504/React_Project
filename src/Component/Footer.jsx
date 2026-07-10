@@ -2,6 +2,7 @@ import React from 'react'
 import { GrInstagram } from "react-icons/gr"
 import { FaXTwitter } from "react-icons/fa6"
 import { FaFacebookSquare } from "react-icons/fa"
+// Footer.jsx page
 
 const Footer = () => {
   return (
