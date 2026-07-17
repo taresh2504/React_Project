@@ -6,6 +6,8 @@ import '../Tailwind.css'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
+// Login.jsx
+
 const Login = () => {
 
   let navigate = useNavigate()

@@ -6,6 +6,8 @@ import '../App.css'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
+// Signup.jsx
+
 const Signup = () => {
 
   let navigate = useNavigate()

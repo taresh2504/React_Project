@@ -2,6 +2,8 @@ import React from 'react'
 import Usercontext from './Context'
 import { useContext } from 'react'
 
+// Midchild.jsx
+
 const MidChild = () => {
     let data = useContext(Usercontext)
   return (
