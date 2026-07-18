@@ -9,6 +9,8 @@ import mumbaiGoa from '../assets/munbai_goa.jpg'
 import darjeling from '../assets/jalpaiguri_darjeling.jpg'
 import jaisalmer from '../assets/Jaisalmer-to-Jodhpur.jpg'
 
+// Specialtrain.jsx
+
 const Specialtrain = () => {
 
   let [specialdata, setspecialdata] = useState([])

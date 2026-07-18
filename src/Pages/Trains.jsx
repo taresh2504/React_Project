@@ -6,6 +6,8 @@ import BookingTrains from './BookingTrains';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
+// Trains.jsx
+
 const Trains = () => {
 
   // 🔎 Search states (UNCOMMENT + REQUIRED)

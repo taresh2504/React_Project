@@ -12,6 +12,8 @@ import Footer from "./Component/Footer";
 import Practice from "./Pages/Practice";
 import MidChild from "./Pages/MidChild";
 
+// App.jsx
+
 const App = () => {
   return (
     <>
