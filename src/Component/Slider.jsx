@@ -1,8 +1,8 @@
+// Slider.jsx Page
 import React, { useState } from 'react'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
 import train1 from '../assets/train1.jpg';
 import train2 from '../assets/train2.jpg';
 import train3 from '../assets/jalpaiguri_darjeling.jpg';
@@ -16,7 +16,6 @@ import 'swiper/css/navigation';
 import '../App.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-// Slider.jsx Page
 
 export default function App() {
 
