@@ -115,7 +115,8 @@ const Signup = () => {
       <div className="w-full max-w-md mx-auto flex justify-center align-middle mt-20 max-[479px]:mt-10 max-[479px]:px-3">
 
         <ElectricBorder
-          color="#7df9ff"
+          // color="#7df9ff"
+          color="red"
           speed={1}
           chaos={0.12}
           thickness={2}

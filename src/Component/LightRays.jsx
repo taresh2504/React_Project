@@ -1,7 +1,7 @@
+// Lightrays.jsx page
 import { useRef, useEffect, useState } from 'react';
 import { Renderer, Program, Triangle, Mesh } from 'ogl';
 import '../App.css';
-// Lightrays.jsx page
 
 const DEFAULT_COLOR = '#ffffff';
 

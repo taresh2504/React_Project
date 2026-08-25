@@ -1,9 +1,9 @@
+// Navbar.jsx page
 import React, { useState } from 'react'
 import '../Tailwind.css'
 import logo from '../assets/train-logo1.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes } from "react-icons/fa"
-// Navbar.jsx page
 
 const Navbar = () => {
 
