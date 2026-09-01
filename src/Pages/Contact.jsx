@@ -1,6 +1,7 @@
+// Contact.jsx
 import React from 'react'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
-// Contact.jsx
+
 
 const Contact = () => {
   return (

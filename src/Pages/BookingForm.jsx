@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-// Booking form page
+// Booking form.jsx  page
 
 const BookingForm = () => {
   let navigate = useNavigate()

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Component/Navbar'
 import Slider from '../Component/Slider'
 import '../Tailwind.css'
+// Home.jsx
 import Trainroute from './Trainroute'
 import Specialtrain from './Specialtrain'
 import axios from 'axios'
@@ -11,7 +12,7 @@ import mhe from '../assets/Maharaja_Express.jpg'
 import pow from '../assets/palace-on-wheels.jpg'
 import tdo from '../assets/train-deccan-odyssey18.jpg'
 
-// Home.jsx
+
 
 const Home = () => {
 
