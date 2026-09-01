@@ -1,3 +1,4 @@
+// Signup.jsx
 // code 2 :- AI for icons 
 import React, { useState } from 'react'
 import ElectricBorder from '../Component/ElectricBorder'
@@ -6,7 +7,7 @@ import '../App.css'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-// Signup.jsx
+
 
 const Signup = () => {
 
@@ -116,7 +117,7 @@ const Signup = () => {
 
         <ElectricBorder
           // color="#7df9ff"
-          color="red"
+          color="green"
           speed={1}
           chaos={0.12}
           thickness={2}

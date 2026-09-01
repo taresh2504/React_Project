@@ -1,6 +1,7 @@
+// About.jsx  page
 import React from 'react'
 import '../Tailwind.css'
-// About page
+
 
 const About = () => {
   return (

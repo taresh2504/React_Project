@@ -1,6 +1,7 @@
+// Electricborder.jsx page
 import { useEffect, useRef, useCallback } from 'react';
 import '../App.css';
-// Electricborder.jsx page
+
 
 const ElectricBorder = ({
   children,
