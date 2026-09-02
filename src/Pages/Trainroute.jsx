@@ -1,8 +1,8 @@
+// Trainroute.jsx
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { RiArrowLeftRightFill } from "react-icons/ri";
 
-// Trainroute.jsx
 
 const Trainroute = ({ image, name, source, destination, price }) => {
   const navigate = useNavigate()

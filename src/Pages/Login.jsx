@@ -1,4 +1,5 @@
-// code 2 for login 
+// code 2 for login
+// Login.jsx 
 import React, { useState } from 'react'
 import LightRays from '../Component/LightRays'
 import '../App.css'
@@ -6,7 +7,7 @@ import '../Tailwind.css'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-// Login.jsx
+
 
 const Login = () => {
 

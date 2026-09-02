@@ -1,3 +1,4 @@
+// Trains.jsx
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Component/Navbar';
 import { FaTrainSubway } from "react-icons/fa6";
@@ -6,7 +7,6 @@ import BookingTrains from './BookingTrains';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
-// Trains.jsx
 
 const Trains = () => {
 

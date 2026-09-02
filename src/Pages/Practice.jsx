@@ -1,7 +1,7 @@
+// Practice.jsx
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-// Practice.jsx
 
 const Practice = () => {
 

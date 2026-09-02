@@ -1,3 +1,4 @@
+// Specialtrain.jsx
 import React,{useEffect,useState} from 'react'
 import '../App.css'
 import { RiArrowLeftRightFill } from "react-icons/ri";
@@ -9,7 +10,6 @@ import mumbaiGoa from '../assets/munbai_goa.jpg'
 import darjeling from '../assets/jalpaiguri_darjeling.jpg'
 import jaisalmer from '../assets/Jaisalmer-to-Jodhpur.jpg'
 
-// Specialtrain.jsx
 
 const Specialtrain = () => {
 

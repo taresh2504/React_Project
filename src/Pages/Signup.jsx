@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 
-
 const Signup = () => {
 
   let navigate = useNavigate()
@@ -117,7 +116,7 @@ const Signup = () => {
 
         <ElectricBorder
           // color="#7df9ff"
-          color="green"
+          color="orange"
           speed={1}
           chaos={0.12}
           thickness={2}

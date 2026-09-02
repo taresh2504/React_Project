@@ -13,7 +13,6 @@ import pow from '../assets/palace-on-wheels.jpg'
 import tdo from '../assets/train-deccan-odyssey18.jpg'
 
 
-
 const Home = () => {
 
   const [trainRoutes, setTrainRoutes] = useState([])
