@@ -5,8 +5,8 @@ import '../App.css';
 
 const ElectricBorder = ({
   children,
-  // color = '#5227FF',
-  color = 'green',
+  color = '#5227FF',
+  // color = 'green',
   speed = 1,
   chaos = 0.12,
   borderRadius = 24,
