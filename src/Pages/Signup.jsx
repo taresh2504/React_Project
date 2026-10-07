@@ -118,7 +118,7 @@ const Signup = () => {
 
         <ElectricBorder
           // color="#7df9ff"
-          color="yellow"
+          color="purple"
           speed={1}
           chaos={0.12}
           thickness={2}
